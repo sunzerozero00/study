@@ -3,6 +3,7 @@
 /* em, rem 단위 쓰는 기준: 글씨 크기는 rem, 여백 및 크기는 em 단위를 사용하여 글씨 크기에 비례한 크기로 지정 */
 /* vw, rem 단위 쓰는 기준: 창 크기에 따라 유연하게 조정할 것은 vw, 고정할 크기는 rem 단위 사용  */
 /* 비디오나 이미지가 풀스크린에 꽉 차는 경우가 있기 때문에 scroll-section에 max-width를 주는 대신 필요한 부분에 추가 */
+/* 조금 더 넓은 브라우저 지원을 위해 position: sticky 대신 position: fixed 사용 */
 
 html {
 	font-family: 'Noto Sans KR', sans-serif;
@@ -129,6 +130,20 @@ a {
 	height: 7rem;
 	color: white;
 	background-color: darkorange;
+}
+
+.sticky-elem {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+#show-scene-0 #scroll-section-0 .sticky-elem,
+#show-scene-1 #scroll-section-1 .sticky-elem,
+#show-scene-2 #scroll-section-2 .sticky-elem,
+#show-scene-3 #scroll-section-3 .sticky-elem {
+	display: block;
 }
 
 @media (min-width: 1024px) {
