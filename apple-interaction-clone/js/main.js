@@ -5,6 +5,10 @@
 // 전역 변수 사용을 피하기 위해 익명 함수 호출
 (() => {
 
+	let yOffset = 0; //window.pageYoffset 대신 쓸 변수
+	let prevScrollHeight = 0; //현재 스크롤 위치(yOffset)보다 이전에 위치한 스크롤 섹션들의 스크롤 높이의 합을 저장할 변수
+	let currentScene = 0; // 현재 스크롤하고 있는 스크롤 섹션
+
 	const sceneInfo = [
 		{
 			// 0
@@ -53,8 +57,30 @@
 			// template 문자열: ${변수}
 		}
 	}
+
+	function scrollLoop() { // 몇 번째 섹션에서 스크롤 중인지 계산하는 함수
+		prevScrollHeight = 0; // 초기값은 항상 0으로 고정
+		for (let i = 0; i < currentScene; i++) {
+			prevScrollHeight += sceneInfo[i].scrollHeight; // prevScrollHeight = 현재 활성화 된 스크롤 섹션보다 앞에 있는 스크롤 섹션들의 scrollHeight 합
+		}
+
+		if (yOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight) { // yOffset이 prevScrollHeight + 현재 활성화 된 스크롤 섹션의 scrollHeight 값까지 더해준 값보다 클 때 currentScene 인덱스 증가
+			currentScene++;
+		}
+
+		if (yOffset < prevScrollHeight) { //yOffset이 precScrollHeight보다 작으면 currentScene 인덱스 감소
+			if(currentScene === 0) return; // IOS에서 바운스 효과로 currentScene이 마이너스가 되는 상황을 방지
+			currentScene--;
+		}
+
+		console.log(currentScene);
+	}
 	
 	window.addEventListener('resize', setLayout); //윈도우 크기 달라질 때마다 새로 적용
+	window.addEventListener('scroll', () => { // 스크롤하면 기본적으로 실행할 함수
+		yOffset = window.pageYOffset; // 사용의 용이성을 위해 변수 처리함
+		scrollLoop();
+	})
 	
 	setLayout();
 
