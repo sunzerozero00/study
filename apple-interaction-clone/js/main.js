@@ -8,6 +8,7 @@
 	let yOffset = 0; //window.pageYoffset 대신 쓸 변수
 	let prevScrollHeight = 0; //현재 스크롤 위치(yOffset)보다 이전에 위치한 스크롤 섹션들의 스크롤 높이의 합을 저장할 변수
 	let currentScene = 0; // 현재 스크롤하고 있는 스크롤 섹션
+	let enterNewScene = false; //새로운 scene이 시작된 순간 true
 
 	const sceneInfo = [
 		{
@@ -18,6 +19,13 @@
 											 // 각 섹션에서 얼만큼 스크롤할지 높이를 지정(높이가 길면 스크롤을 많이 하기 때문에 애니메이션이 느림 / 높이가 짧으면 스크롤을 조금만 해도 되기 때문에 애니메이션이 빠름)
 			objs: { // 애니메이션을 적용할 HTML 요소를 모아둘 객체
 				container: document.querySelector('#scroll-section-0'),
+				messageA: document.querySelector('#scroll-section-0 .main-message.a'),
+				messageB: document.querySelector('#scroll-section-0 .main-message.b'),
+				messageC: document.querySelector('#scroll-section-0 .main-message.c'),
+				messageD: document.querySelector('#scroll-section-0 .main-message.d'),
+			},
+			values: {
+				messageA_opacity: [0, 1]
 			}
 		},
 		{
@@ -71,22 +79,69 @@
 		document.body.setAttribute('id', `show-scene-${currentScene}`);
 	}
 
+	function calcValues(values, currentYOffset) {
+		let rv;
+		// 현재 스크롤 섹션에서 스크롤 된 범위를 비율로 구하기
+		let scrollRatio = currentYOffset / sceneInfo[currentScene].scrollHeight; // 현재 얼만큼 스크롤 되었는지 / 현재 씬의 전체의 범위
+
+		// 애니메이션 값?
+		rv = scrollRatio * (values[1] - values[0]) + values[0]; // 현재 스크롤 섹션에서 스크롤 된 범위의 비율 * (끝값 - 초기값) + 초기값
+
+		return rv;
+	}
+
+	function playAnimation() {
+		const objs = sceneInfo[currentScene].objs;
+		const values = sceneInfo[currentScene].values;
+		const currentYOffset = yOffset - prevScrollHeight;
+
+		console.log(currentScene);
+
+		switch (currentScene) {
+			case 0:
+				// console.log('0 play');
+				let messageA_opacity_in = calcValues(values.messageA_opacity, currentYOffset);
+				objs.messageA.style.opacity = messageA_opacity_in;
+				console.log(messageA_opacity_in);
+				break;
+
+			case 1: 
+				// console.log('1 play');
+				break;
+
+			case 2: 
+				// console.log('2 play');
+				break;
+
+			case 3: 
+				// console.log('3 play');
+				break;
+		}
+	}
+
 	function scrollLoop() { // 몇 번째 섹션에서 스크롤 중인지 계산하는 함수
+		enterNewScene = false;
 		prevScrollHeight = 0; // 초기값은 항상 0으로 고정
 		for (let i = 0; i < currentScene; i++) {
 			prevScrollHeight += sceneInfo[i].scrollHeight; // prevScrollHeight = 현재 활성화 된 스크롤 섹션보다 앞에 있는 스크롤 섹션들의 scrollHeight 합
 		}
 
 		if (yOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight) { // yOffset이 prevScrollHeight + 현재 활성화 된 스크롤 섹션의 scrollHeight 값까지 더해준 값보다 클 때 currentScene 인덱스 증가
+			enterNewScene = true;
 			currentScene++;
 			document.body.setAttribute('id', `show-scene-${currentScene}`);
 		}
 
 		if (yOffset < prevScrollHeight) { //yOffset이 precScrollHeight보다 작으면 currentScene 인덱스 감소
+			enterNewScene = true;
 			if(currentScene === 0) return; // IOS에서 바운스 효과로 currentScene이 마이너스가 되는 상황을 방지
 			currentScene--;
 			document.body.setAttribute('id', `show-scene-${currentScene}`);
 		}
+
+		if (enterNewScene) return;
+
+		playAnimation();
 	}
 	
 	window.addEventListener('scroll', () => { // 스크롤하면 기본적으로 실행할 함수
