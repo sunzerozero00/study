@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>표</title>
+</head>
+
+<body>
+  <!-- 열(col): 세로방향, 행(row): 가로방향 -->
+
+  <!-- 
+    <table>
+      <caption>표의 제목: 대부분 숨김 처리</caption>
+      <colgroup>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th>표의 제목: 굵은 글씨, 가운데 정렬</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>표의 내용</td>
+        </tr>
+      </tbody>
+      <tfoot>표의 결과값</tfoot>
+    </table>
+    -->
+
+  <!-- <table width="100%" border="1">  실습을 위해 사용한 임시코드. 현재 폐기된 코드임-->
+  <table width="100%" border="1">
+    <caption>
+      표의 제목
+    </caption>
+    <colgroup>
+      <!-- <col width=""> 폐기된 속성-->
+      <!-- <col style="width: 값;"> -->
+      <col style="width: 25%">
+      <col style="width: 25%">
+      <col style="width: 25%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>교육일자</th>
+        <th>수강생</th>
+        <th>지역</th>
+        <th>만족도</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>8월 3일</td>
+        <td>20명</td>
+        <td>서울</td>
+        <td>상</td>
+      </tr>
+      <tr>
+        <td>9월 5일</td>
+        <td>10명</td>
+        <td>경기</td>
+        <td>상</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>합계</th>
+        <td>30명</td>
+        <td>-</td>
+        <td>상</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <br><br><br>
+
+  <!-- 표 병합해보기: colspan, rowspan은 병합이 시작되는 열/행에 작성 -->
+
+  <!-- 표 병합해보기 1. 열끼리 병합(좌우) -->
+  <table border="1">
+    <tr>
+      <td colspan="2">1</td>
+      <!-- 병합한 열은 삭제 -->
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>6</td>
+      <td colspan="2">7</td>
+      <!-- 병합한 열은 삭제 -->
+    </tr>
+    <tr>
+      <td colspan="3">9</td>
+      <!-- 병합한 열은 삭제 -->
+      <td>12</td>
+    </tr>
+  </table>
+
+  <br><br><br>
+
+  <!-- 표 병합해보기 2. 행끼리 병합(상하) -->
+  <table border="1">
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td rowspan="3">4</td>
+    </tr>
+    <tr>
+      <!-- 병합한 행 삭제 -->
+      <td>6</td>
+      <td>7</td>
+      <!-- 병합한 열은 삭제 -->
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>10</td>
+      <!-- 병합한 열은 삭제 -->
+      <!-- 병합한 열은 삭제 -->
+    </tr>
+  </table>
+
+  <!-- 실습 -->
+  <br><br><br>
+  <h2>표1</h2>
+  <table width="100%" border="1">
+    <caption>
+      게시판
+    </caption>
+    <colgroup>
+      <col width="76px">
+      <col width="94px">
+      <col width="126px">
+      <col>
+      <col width="94px">
+      <col width="78px">
+      <col width="119px">
+      <col width="105px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>구분</th>
+        <th>부서</th>
+        <th>제목</th>
+        <th>첨부파일</th>
+        <th>작성자</th>
+        <th>작성일</th>
+        <th>조회수</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>261</td>
+        <td>보상</td>
+        <td>수도권수도건설단</td>
+        <td>
+          한강하류권(3차)급수체계조정사업(우선시행구간) 수도권수도건설단 사업 최초 시행구간...
+          <img src="./images/ico_table1_new.svg" alt="새글">
+        </td>
+        <td>
+          <a href="#">
+            <img src="./images/ico_table1_disk.svg" alt="다운로드">
+          </a>
+        </td>
+        <td>박종환</td>
+        <td>2022-12-07</td>
+        <td>59</td>
+      </tr>
+      <tr>
+        <td>260</td>
+        <td>기타</td>
+        <td>광주전남지역본부</td>
+        <td>[장흥수도관리단]관로시설 긴급 복구 협력업체 지원 사업</td>
+        <td>
+          <a href="#">
+            <img src="./images/ico_table1_disk.svg" alt="다운로드">
+          </a>
+        </td>
+        <td>김형우</td>
+        <td>2022-12-07</td>
+        <td>51</td>
+      </tr>
+      <tr>
+        <td>259</td>
+        <td>기타</td>
+        <td>경남부산지역본부</td>
+        <td>[장흥수도관리단]관로시설 긴급 복구</td>
+        <td>
+          <a href="#">
+            <img src="./images/ico_table1_disk.svg" alt="다운로드">
+          </a>
+        </td>
+        <td>관리자</td>
+        <td>2022-12-07</td>
+        <td>53</td>
+      </tr>
+      <!-- Case. 게시물이 0개일 때 -->
+      <tr>
+        <td colspan="8">현재 게시물이 존재하지 않습니다.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+  <h2>표2</h2>
+  <!-- Tip: 컴포넌트에는 고정 px을 주지 않는 것이 좋다. (유연성 보장) -->
+  <!-- Tip: 가장 넓은 열에는 너비를 주지 않아도 된다. -->
+  <table width="100%" border="1">
+    <caption>
+      공지사항
+    </caption>
+    <colgroup>
+      <col style="width: 86px">
+      <col>
+      <col style="width: 109px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>공지일</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>중요공지</th>
+        <td><a href="#">[공지] 위치정보이용약관 변경에 따른 사전공지</a></td>
+        <td>2019.01.02</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td><a href="#">SK플래닛 홈페이지가 새롭게 단장하였습니다.</a></td>
+        <td>2019.01.02</td>
+      </tr>
+      <!-- Case. 게시글이 없는 경우 -->
+      <tr>
+        <td colspan="3">현재 게시물이 존재하지 않습니다.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+  <h2>표3</h2>
+  <!-- Tip: 아이콘 이미지에 대한 설명은 다운로드 버튼에 되어있기 때문에 대체 텍스트가 없어도 괜찮다. -->
+  <table width="100%" border="1">
+    <caption>
+      다운로드 목록
+    </caption>
+    <colgroup>
+      <col style="width: 146px">
+      <col>
+      <col style="width: 255px">
+    </colgroup>
+    <tbody>
+      <tr>
+        <td>
+          <img src="./images/ico_table3_excel.svg" alt="">
+        </td>
+        <td>
+          Quarterly IR Pack (2022년 4분기) <br>
+          2020.11.15
+        </td>
+        <td>
+          <a href="#">
+            <span>EXL DOWN</span>
+            <img src="./images/ico_table3_download.svg" alt="">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./images/ico_table3_pdf.svg" alt="">
+        </td>
+        <td>
+          2020년 3분기 실적자료 (영문) <br>
+          2020.07.15
+        </td>
+        <td>
+          <a href="#">
+            <span>PDF DOWN</span>
+            <img src="./images/ico_table3_download.svg" alt="">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./images/ico_table3_ppt.svg" alt="">
+        </td>
+        <td>
+          2020년 3분기 실적자료 <br>
+          2020.07.15
+        </td>
+        <td>
+          <a href="#">
+            <span>PPT DOWN</span>
+            <img src="./images/ico_table3_download.svg" alt="">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./images/ico_table3_excel.svg" alt="">
+        </td>
+        <td>
+          Quartely IRPack (2022년 3분기) <br>
+          2020.07.15
+        </td>
+        <td>
+          <a href="#">
+            <span>EXL DOWN</span>
+            <img src="./images/ico_table3_download.svg" alt="">
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+  <h2>표4</h2>
+  <table width="100%" border="1">
+    <caption>
+      배송 및 반품/교환 안내
+    </caption>
+    <colgroup>
+      <col width="150px">
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>배송비</th>
+        <td>무료</td>
+      </tr>
+      <tr>
+        <th>평균배송일</th>
+        <td>
+          2.7일 (2일 이내 55% 이상) 가구/설치/주문제작 제외
+          <a href="#"><img src="./images/ico_table4_information.svg" alt="평균배송일 더보기 팝업 열기"></a>
+        </td>
+      </tr>
+      <tr>
+        <th>배송지역</th>
+        <td>전지역 배송 가능</td>
+      </tr>
+      <tr>
+        <th>반품/교환</th>
+        <td>
+          상품확인 후 환불 <a href="#"><img src="./images/ico_table4_information.svg" alt="환불안내 더보기 팝업 열기"></a> / 반품배송비 없음 /
+          교환배송비
+          없음
+        </td>
+      </tr>
+      <tr>
+        <th>종류</th>
+        <td>핸드백</td>
+      </tr>
+      <tr>
+        <th>품질보증기준</th>
+        <td>관련법 및 소비자 분쟁해결 기준에 따름</td>
+      </tr>
+      <tr>
+        <th>A/S책임자와 전화번호</th>
+        <td>더리베닷컴 고객센터 문의(1088-1234)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+  <h2>표5</h2>
+  <table width="100%" border="1">
+    <caption>
+      초중고 교육 요건
+    </caption>
+    <colgroup>
+      <col width="237px">
+      <col>
+      <col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th></th>
+        <th>교육목표</th>
+        <th>교육내용</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>초등학교 17시간 필수교육</th>
+        <td>SW 소양교육 / SW코딩 이해</td>
+        <td>디지털소양 컴퓨터사고력 체험</td>
+      </tr>
+      <tr>
+        <th>중학교 34시간 필수교육</th>
+        <td>SW 소양교육</td>
+        <td>컴퓨팅사고력 기반 현실세계 문제 해결 (SW코딩)</td>
+      </tr>
+      <tr>
+        <th>고등학교 심화선택, 전문교과</th>
+        <td>
+          컴퓨터 융합활동을 통한 <br>
+          창의적 산출물 제작 및 대학 진로 연계학습
+        </td>
+        <td>컴퓨팅 사고력 기반 융합적 문제 해결 (SW코딩)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+  <h2>표6</h2>
+  <table width="100%" border="1">
+    <caption>
+      보험 정보
+    </caption>
+    <colgroup>
+      <col width="230px">
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>보험상품명</th>
+        <td>보험상품명</td>
+      </tr>
+      <tr>
+        <th>계약자, 피보험자</th>
+        <td>계약자와 피보험자가 동일한 경우에만 계약이 가능</td>
+      </tr>
+      <tr>
+        <th>
+          가입 연령
+          <a href="#">
+            <img src="./images/ico_table6_tooltip.svg" alt="">
+          </a>
+        </th>
+        <td>만 19세 - 69세</td>
+      </tr>
+      <tr>
+        <th>보험기간</th>
+        <td>3, 10년만기</td>
+      </tr>
+      <tr>
+        <th>보험료 납입기간</th>
+        <td>
+          3년만기 : 1년납, 2년납,전기납 <br>
+          10년만기 : 2년납, 3년납, 5년납, 전기납
+        </td>
+      </tr>
+      <tr>
+        <th>기본 보험료</th>
+        <td>1구좌 기준 1만원 이상 100만원 이하</td>
+      </tr>
+      <tr>
+        <th>가입한도</th>
+        <td>
+          (모바일) 1만원 이상 <br>
+          (PC) 5만원 이상
+        </td>
+      </tr>
+      <tr>
+        <th>보험료 납입주기</th>
+        <td>
+          기본보험료:월납 <br>
+          추가납입보험료:수시납 (매월 계약해당일 기준 월 4회에 한함)
+        </td>
+      </tr>
+      <tr>
+        <th>
+          해지환급금
+          <a href="#">
+            <img src="./images/ico_table6_tooltip.svg" alt="">
+          </a>
+        </th>
+        <td>
+          <a href="#">
+            <img src="./images/ico_table6_popup_1.png" alt="해지환급금 예시표 보기">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th>특약</th>
+        <td>
+          특정신체부위 질병보장 제한부 인수특약, 표준하체인수특약, 지정대리청구서비스특약 <br>
+          연금전환특약Ⅱ(무)
+          <a href="#">
+            <img src="./images/ico_table6_popup_2.png" alt="자세히보기">
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+  <h2>표7</h2>
+  <p>자주묻는 질문 전체 <b>92</b>건 입니다</p>
+  <table width="100%" border="1">
+    <caption>
+      자주묻는 질문
+    </caption>
+    <colgroup>
+      <col style="width: 75px">
+      <col style="width: 189px">
+      <col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>구분</th>
+        <th>제목</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>주문/결제</td>
+        <td><a href="#">주문과 결제는 어떻게 하나요?</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>상품</td>
+        <td>
+          <a href="#">[상담]견적을 바로 알고싶은데 꼭 실측을 해야 하나요?</a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>상품</td>
+        <td>
+          <a href="#">[시공/설치]부분으로 공사하게되면 얼마나 걸리나요?</a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <p>
+            안녕하세요 리베닷컴입니다. <br><br>
+            부엌은 보통 설치 전달 철거와 타일 작업 후 다음날 설치하는 방식으로진행하기 때문에 철거부터 소요되는 시간은 약 2~3일 정도 걸릴 수있습니다.<br>
+            붙박이/빌트인장은 전날 철거하는 경우가많고, 제품 자체의 설치는 반나절에서 하루정도 걸립니다.(사이즈,붙박이 수에 따라 달리질 수 있습니다.) <br><br>
+            감사합니다.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>상품</td>
+        <td>
+          <a href="#">[시공/설치]전체적인 리모델링 공사는 얼마나 걸리나요?</a>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>상품</td>
+        <td><a href="#">[A/S]as기간은 어떻게 되나요?</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <nav>
+    <a href="#">
+      <img src="./images/ico_table7_left_arrow.svg" alt="이전페이지">
+    </a>
+    <a href="#"><span>현재위치</span>1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">7</a>
+    <a href="#">8</a>
+    <a href="#">9</a>
+    <a href="#">10</a>
+    <a href="#">
+      <img src="./images/ico_table7_right_arrow.svg" alt="다음페이지">
+    </a>
+  </nav>
+
+  <br><br><br>
+  <h2>표8</h2>
+  <table width="100%" border="1">
+    <caption>
+      달력
+    </caption>
+    <colgroup>
+      <col width="130px">
+      <col width="130px">
+      <col width="130px">
+      <col width="130px">
+      <col width="130px">
+      <col width="130px">
+      <col width="130px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>SUN</th>
+        <th>MON</th>
+        <th>TUE</th>
+        <th>WED</th>
+        <th>THU</th>
+        <th>FRI</th>
+        <th>SAT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><b>1</b></td>
+        <td><b>2</b></td>
+      </tr>
+      <tr>
+        <td><b>3</b></td>
+        <td><b>4</b></td>
+        <td><b>5</b></td>
+        <td><b>6</b></td>
+        <td><b>7</b></td>
+        <td><b>8</b></td>
+        <td><b>9</b></td>
+      </tr>
+      <tr>
+        <td><b>10</b></td>
+        <td><b>11</b></td>
+        <td><b>12</b></td>
+        <td><b>13</b></td>
+        <td><b>14</b></td>
+        <td><b>15</b></td>
+        <td><b>16</b></td>
+      </tr>
+      <tr>
+        <td><b>17</b></td>
+        <td><b>18</b></td>
+        <td><b>19</b></td>
+        <td><b>20</b></td>
+        <td><b>21</b></td>
+        <td>
+          <b>22</b> <br>
+          <b>예약가능</b>
+        </td>
+        <td><b>23</b></td>
+      </tr>
+      <tr>
+        <td><b>24</b></td>
+        <td>
+          <b>25</b> <br>
+          <b>예약가능</b>
+        </td>
+        <td>
+          <b>26</b> <br>
+          <b>예약가능</b>
+        </td>
+        <td>
+          <b>27</b> <br>
+          <b>예약가능</b>
+        </td>
+        <td>
+          <b>28</b><br>
+          <b>예약마감</b>
+        </td>
+        <td>
+          <b>29</b><br>
+          <b>예약마감</b>
+        </td>
+        <td><b>30</b></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+  <h2>표9</h2>
+  <table width="100%" border="1">
+    <caption>
+      견학 프로그램 소개
+    </caption>
+    <colgroup>
+      <col width="174px">
+      <col>
+      <col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th>구분</th>
+        <th>청소년 체험</th>
+        <th>일반인 견학</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>견학 시간</th>
+        <td colspan="2">
+          [오전] 10~12시, [오후] 2~4시 <br>
+          <strong>※ 위 시간에만 견학이 가능하며, 주말 및 공휴일은 운영하지 않습니다.</strong>
+        </td>
+      </tr>
+      <tr>
+        <th>견학 대상</th>
+        <td>15~40인 초·중·고등학생 및 청소년/교원 단체</td>
+        <td>15~40인 대학생 및 일반인 단체(관련 기관 포함)</td>
+      </tr>
+      <tr>
+        <th>견학 코스</th>
+        <td>
+          <strong>[A코스] 1시간</strong> <br>
+          원자력안전체험관 체험 활동 <br>
+          <strong>[B코스] 2시간</strong> <br>
+          원자력안전체험관 체험 활동 및 연구시설 견학 1곳
+        </td>
+        <td>
+          <strong>[A코스] 1시간</strong> <br>
+          홍보 영상 시청 및 연구시설 견학 1곳 <br>
+          <strong>[B코스] 2시간</strong> <br>
+          홍보 영상 시청 및 연구시설 견학 2곳 이상
+        </td>
+      </tr>
+      <tr>
+        <th>문의처</th>
+        <td>
+          <strong>과학문화소통팀 박혜영</strong> <br>
+          - 전화 041-168-4425<br>
+          - 팩스 041-161-1428<br>
+          - 이메일 njeong@kaer.re.kr
+        </td>
+        <td>
+          <strong>과학문화소통팀 김범준</strong> <br>
+          - 전화 041-168-4425<br>
+          - 팩스 041-161-1428<br>
+          - 이메일 njeong@kaer.re.kr
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+  <h2>표10</h2>
+  <table width="100%" border="1">
+    <caption>
+      핵연료 보관 정보
+    </caption>
+    <colgroup>
+      <col width="192px">
+      <col>
+      <col>
+      <col width="184px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>종류</th>
+        <th>보관장소</th>
+        <th>보관량</th>
+        <th>전분기 대비 증감량</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th rowspan="2">경수로 사용후핵연료</th>
+        <td>
+          조사후연료시험시설
+          <a href="#">시설안내</a>
+        </td>
+        <td>3,319.1 kgU(1,693봉, 봉 길이 4m)</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>
+          조사재시험시설
+          <a href="#">시설안내</a>
+        </td>
+        <td>26.4 kgU(6봉, 봉 길이 4m)</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <th>하나로 사용후핵연료</th>
+        <td>
+          하나로 수조
+          <a href="#">시설안내</a>
+        </td>
+        <td>870.7 kgU(510다발, 다발 깅이 0.96m)</td>
+        <td>6.3kgU(4다발)</td>
+      </tr>
+      <tr>
+        <th rowspan="3">조사 핵연료 시편</th>
+        <td>
+          하나로 수조
+          <a href="#">시설안내</a>
+        </td>
+        <td>6.1 kgU</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>
+          조사후연료시험시설
+          <a href="#">시설안내</a>
+        </td>
+        <td>0.7 kgU</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>
+          조사재시험시설
+          <a href="#">시설안내</a>
+        </td>
+        <td>1.0 kgU</td>
+        <td>-</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+  <h2>표11</h2>
+  <table width="100%" border="1">
+    <caption>
+      요금 안내
+    </caption>
+    <colgroup>
+      <col width="310px">
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th colspan="2">구분</th>
+        <th>주중</th>
+        <th>주말</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th rowspan="4">그린피</th>
+        <th>정회원</th>
+        <td><b>60,000</b> 원</td>
+        <td><b>60,000</b> 원</td>
+      </tr>
+      <tr>
+        <th>가족회원</th>
+        <td><b>60,000</b> 원</td>
+        <td><b>150,000</b> 원</td>
+      </tr>
+      <tr>
+        <th>지명회원</th>
+        <td><b>80,000</b> 원</td>
+        <td>
+          <b>210,000</b> 원<br>
+          <b>195,000</b> 원
+        </td>
+      </tr>
+      <tr>
+        <th>비회원</th>
+        <td><b>150,000</b> 원</td>
+        <td>
+          <b>210,000</b> 원<br>
+          <b>150,000</b> 원
+        </td>
+      </tr>
+      <tr>
+        <th colspan="2">카트사용료</th>
+        <td colspan="2"><b>80,000</b> 원</td>
+      </tr>
+      <tr>
+        <th colspan="2">보조원 봉사료</th>
+        <td colspan="2"><b>120,000</b> 원 (팀당)</td>
+      </tr>
+      <tr>
+        <th colspan="2">대여료</th>
+        <td colspan="2">골프화, 퍼터 <b>10,000</b> 원 대여클럽 <b>50,000</b> 원</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
