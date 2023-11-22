@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[김선영] 리스트</title>
+  <title>리스트</title>
 </head>
 
 <body>
@@ -47,12 +47,13 @@
 
   <br><br><br>
   <h2>리스트2</h2>
+  <!-- Feedback. 탭메뉴는 클릭 가능하기 때문에 <a>태그로 감싸주기 -->
   <nav>
     <ul>
-      <li>저축</li>
-      <li>연금</li>
-      <li>자녀</li>
-      <li>보장</li>
+      <li><a href="#">저축</a></li>
+      <li><a href="#">연금</a></li>
+      <li><a href="#">자녀</a></li>
+      <li><a href="#">보장</a></li>
     </ul>
   </nav>
   <div>탭내용1</div>
@@ -71,6 +72,7 @@
 
   <br><br><br>
   <h2>리스트4</h2>
+  <!-- Feedback. <strong> 대신 <hn> 사용해도 괜찮다. (이것은 우리 회사 영향...우리 회사는 <hn>을 매우 신중하게 사용해...) -->
   <strong>이런분들에게 추천합니다</strong>
   <ol>
     <li><span>01</span>직업상담직 공무원 합격 목표인 분</li>
@@ -81,6 +83,7 @@
 
   <br><br><br>
   <h2>리스트5</h2>
+  <!-- Feedback. 제목 > 리스트 구조 또는 리스트 > 리스트 구조 모두 괜찮다고 한다. (내가 참조한 사이트: 한게임 섯다&맞고, 회원약관은 최대한 단순하게 코딩하라고 들은 듯) -->
   <h3>제 1 조 (목적)</h3>
   <p>이 이용약관(이하 '약관')은 ㈜휴넷 (이하 회사라 합니다)와 이용 고객(이하 '회원')간에 회사가 제공하는 서비스의 가입조건 및 이용에 관한 제반 사항과 경영지식몰의 상품 구입, 기타 필요한 사항을
     구체적으로 규정함을 목적으로 합니다.</p>
@@ -124,6 +127,8 @@
 
   <br><br><br>
   <h2>리스트6</h2>
+  <!-- Feedback. 의도 > "계산하기" 버튼만 클릭 (나의 의문. 그럼 hover 동작도 버튼에만 있어야 하는거 아닌감?) -->
+  <!-- Feedback. 이미지 네이밍: ico_list6_{n}, 6번 리스트라는 정보는 의미 있지만 각 아이콘 모양에는 특별한 의미가 없음 -->
   <ul>
     <li>
       <a href="#">
@@ -184,7 +189,7 @@
   <!-- Tip. 1개의 목적을 가진 리스트라면 ul도 1개만 만들면 됨 -->
   <ul>
     <li>
-      <img src="./images/ico_logo_list_1.svg" alt="">
+      <img src="./images/ico_list7_logo1.svg" alt="">
       <span>계열사명</span><b>리베마트</b> 온라인 몰
       <ul>
         <li>기간 2019.3.1(금)-3.31(일)</li>
@@ -194,7 +199,7 @@
       </ul>
     </li>
     <li>
-      <img src="./images/ico_logo_list_2.svg" alt="">
+      <img src="./images/ico_list7_logo2.svg" alt="">
       <span>계열사명</span><b>리베마트</b> 온라인 몰/오프라인 매장
       <ul>
         <li>기간 2019.3.1(금)-3.31(일)</li>
@@ -204,7 +209,7 @@
       </ul>
     </li>
     <li>
-      <img src="./images/ico_logo_list_3.svg" alt="">
+      <img src="./images/ico_list7_logo3.svg" alt="">
       <span>계열사명</span><b>리베닷컴</b> 온라인 몰
       <ul>
         <li>기간 2019.3.1(금)-3.31(일)</li>
@@ -214,7 +219,7 @@
       </ul>
     </li>
     <li>
-      <img src="./images/ico_logo_list_2.svg" alt="">
+      <img src="./images/ico_list7_logo2.svg" alt="">
       <span>계열사명</span><b>리베홈쇼핑</b> 온라인 몰
       <ul>
         <li>기간 2019.3.1(금)-3.31(일)</li>
@@ -224,7 +229,7 @@
       </ul>
     </li>
     <li>
-      <img src="./images/ico_logo_list_4.svg" alt="">
+      <img src="./images/ico_list7_logo4.svg" alt="">
       <span>계열사명</span><b>엘리베</b> 온라인 몰
       <ul>
         <li>기간 2019.3.1(금)-3.31(일)</li>
@@ -234,7 +239,7 @@
       </ul>
     </li>
     <li>
-      <img src="./images/ico_logo_list_1.svg" alt="">
+      <img src="./images/ico_list7_logo1.svg" alt="">
       <span>계열사명</span><b>리베인터넷면세점</b> 온라인 몰
       <ul>
         <li>기간 2019.3.1(금)-3.31(일)</li>
@@ -275,53 +280,62 @@
 
   <br><br><br>
   <h2>리스트9</h2>
+  <!-- Feedback. (디자인 의도에 따라 다르겠지만) View more 영역이 매우 작음. 전체 클릭 가능한 갤러리 디자인이라고 볼 때 전체를 <a> 태그로 감싸는 게 좋음 -->
   <ul>
     <li>
-      <img src="./images/img_list9_1.png" alt="">
-      <strong>리베경영연구원</strong>
-      <div>Rebe Research Institute</div>
-      <b>Creative Think Leader in Steel and Beyond</b>
-      <p>
-        리베경영연구원은 미래를 선도하는 경영모델과 산업분야에 대한 연구 결과를 지속적으로 산출하고 세계 최고 수준의 연구와 컨설팅 역량을 갖춘 경영 및 철강산업 전문 연구기관입니다. 또한 창의적인 연구방식과
-        실용적인 연구 결과를 적기에 제공함으로써
-        최고 경영자의 의사결정을 지원하고 포스코 그룹의 지속성장과 사회 발전에 기여합니다.
-      </p>
-      <a href="#">홈페이지 바로가기</a>
+      <a href="#">
+        <img src="./images/img_list9_1.png" alt="">
+        <strong>리베경영연구원</strong>
+        <div>Rebe Research Institute</div>
+        <b>Creative Think Leader in Steel and Beyond</b>
+        <p>
+          리베경영연구원은 미래를 선도하는 경영모델과 산업분야에 대한 연구 결과를 지속적으로 산출하고 세계 최고 수준의 연구와 컨설팅 역량을 갖춘 경영 및 철강산업 전문 연구기관입니다.
+          또한 창의적인 연구방식과 실용적인 연구 결과를 적기에 제공함으로써 최고 경영자의 의사결정을 지원하고 포스코 그룹의 지속성장과 사회 발전에 기여합니다.
+        </p>
+        <div>홈페이지 바로가기</div>
+      </a>
     </li>
     <li>
-      <img src="./images/img_list9_2.png" alt="">
-      <strong>리베인재창조원</strong>
-      <div>Rebe Group University</div>
-      <b>창의와 혁신의 글로벌 NO.1 HRD 센터</b>
-      <p>
-        `15년2월, 리베인재창조원은 그룹교육기능을 통합한 종합적인 인재육성 기관으로 새롭게 출범하였습니다. `69년 제철연수원부터 쌓아온 HRD 노하우를 적극 활용하여 그룹 일체감 조성 및 계층별 리더십
-        배양, 신뢰의 조직 문화 구축에 주력하고 있습니다.
-        리베 그룹의 미래 가치를 창조하는 인재를 육성한다는 리베인재창조원의 미 션에 따라 변화와 혁신을 지원하며 Global Top Tier 수준의 교육전문기관이 되겠습니다.
-      </p>
-      <a href="#">홈페이지 바로가기</a>
+      <a href="#">
+        <img src="./images/img_list9_2.png" alt="">
+        <strong>리베인재창조원</strong>
+        <div>Rebe Group University</div>
+        <b>창의와 혁신의 글로벌 NO.1 HRD 센터</b>
+        <p>
+          `15년2월, 리베인재창조원은 그룹교육기능을 통합한 종합적인 인재육성 기관으로 새롭게 출범하였습니다.
+          `69년 제철연수원부터 쌓아온 HRD 노하우를 적극 활용하여 그룹 일체감 조성 및 계층별 리더십 배양, 신뢰의 조직 문화 구축에 주력하고 있습니다.
+          리베 그룹의 미래 가치를 창조하는 인재를 육성한다는 리베인재창조원의 미 션에 따라 변화와 혁신을 지원하며 Global Top Tier 수준의 교육전문기관이 되겠습니다.
+        </p>
+        <div>홈페이지 바로가기</div>
+      </a>
     </li>
     <li>
-      <img src="./images/img_list9_3.png" alt="">
-      <strong>리베공과대학교</strong>
-      <div>RebeTECH</div>
-      <b>가치창출대학 POSTECH</b>
-      <p>
-        리베공과대학교는 1986년, 대한민국 최초의연구중심대학으로 문을 열었습니다. 교육, 연구, 산학협동을 통해 국 가와 인류에 봉사하겠다는 건학이념 아래 30여년전 우리 대학사회의 연구 문화에 불씨를 지핀
-        리베공과대학교는 도전과 혁신을 거듭하며오늘날
-        아시아 정상급의 대학으로 자리매김했습니다. 우리나라 고등교육계와 과학기술계를 전도하며 짧은 기간 최고 명문대학으로 성장한 리베공과대학교는 또 다른 30년을 준비하며 ‘가치창출대학(Value
-        Creating University)’이라는 새로운 지향점을 향해
-        나아가고있습니다. 리베공과대학교는 ‘튼실한 학부교육’, ‘빼어난 연구’, ‘활발한 창업과 창직’에 힘쓰며 가치창출의 새로운 길을 열어 대한민국의 사회경제적 발전에 직접적으로 기여하겠습니다.
-      </p>
-      <a href="#">홈페이지 바로가기</a>
+      <a href="#">
+        <img src="./images/img_list9_3.png" alt="">
+        <strong>리베공과대학교</strong>
+        <div>RebeTECH</div>
+        <b>가치창출대학 POSTECH</b>
+        <p>
+          리베공과대학교는 1986년, 대한민국 최초의연구중심대학으로 문을 열었습니다.
+          교육, 연구, 산학협동을 통해 국 가와 인류에 봉사하겠다는 건학이념 아래 30여년전 우리 대학사회의 연구 문화에 불씨를 지핀 리베공과대학교는 도전과 혁신을 거듭하며 오늘날 아시아 정상급의 대학으로
+          자리매김했습니다. 우리나라 고등교육계와 과학기술계를 전도하며 짧은 기간 최고 명문대학으로 성장한 리베공과대학교는 또 다른 30년을 준비하며 ‘가치창출대학(Value Creating
+          University)’이라는 새로운 지향점을 향해
+          나아가고 있습니다. 리베공과대학교는 ‘튼실한 학부교육’, ‘빼어난 연구’, ‘활발한 창업과 창직’에 힘쓰며 가치창출의 새로운 길을 열어 대한민국의 사회경제적 발전에 직접적으로 기여하겠습니다.
+        </p>
+        <div>홈페이지 바로가기</div>
+      </a>
     </li>
   </ul>
 
   <br><br><br>
   <h2>리스트10</h2>
   <!-- Tip. 만약 고정된 이미지가 아닌 DB에서 관리되는 이미지라면 @등과 같은 특수문자를 사용해 파일명에서부터 분리 -->
+  <!-- Feedback. 네비게이션에 대한 설명이더라도 <nav> 태그 바깥에서 써주어야 함 (하지만 html 사양에 따르면 nav안에 제목이 포함되어도 괜찮다?) -->
+  <!-- Feedback. (<nav> 안에는 <ul>, <li>가 필요 없다는 의견도 존재 -> 2022년 글에 따르면 리스트 태그를 사용하는게 좋다고 함 오?) -->
+  <!-- Feedback. img태그는 감싸주는 태그가 있는 것이 좋음 (잘해따. 굿) -->
   <h3>리베닭몰 상품보기</h3>
+  <span>전 상품 카테고리 구경하기</span>
   <nav>
-    <span>전 상품 카테고리 구경하기</span>
     <ul>
       <li><a href="#">엄닭브레스트</a></li>
       <li><a href="#">엄닭소시지</a></li>
@@ -413,7 +427,7 @@
         <a href="#">
           별다방 소개
           <span>
-            <img src="./images/ico_list11_chevron.svg" alt="">
+            <img src="./images/ico_chevron.svg" alt="">
           </span>
         </a>
         <ul>
@@ -429,11 +443,14 @@
 
   <br><br><br>
   <h2>리스트12</h2>
+  <!-- Feedback. <nav> 태그 안에는 탐색 요소만 -->
+  <!-- Feedback. '투자정보'와 'Investment'는 같은 의미이므로 제목 태그 안에 함께 넣어주는 것이 좋음 -->
+  <!-- Feedback. <hn> 태그 안에는 <p>와 같은 블록요소 넣을 수 없음~ -->
+  <h3>
+    투자정보 <br>
+    Investment
+  </h3>
   <nav>
-    <h3>
-      투자정보 <br>
-      Investment
-    </h3>
     <ul>
       <li>
         <a href="#">재무정보</a>
@@ -446,7 +463,7 @@
         <a href="#">
           주가정보
           <span>
-            <img src="./images/ico_list12_arrow.svg" alt="">
+            <img src="./images/ico_arrow.svg" alt="">
           </span>
         </a>
       </li>
@@ -471,6 +488,7 @@
   <br><br><br>
   <h2>리스트13</h2>
   <!-- Tip. 축약어를 표현하는 abbr 태그를 사용할 수도 있음 -->
+  <!-- Feedback. 화살표 대체텍스트로 열림/닫힘 추가 (하긴 alt도 스크립트로 바꿔줄 수 있징. 아 그러고보니까 걍 대체텍스트 넣었던건 스프라이트 이미지 썼었구낭) -->
   <h3>자주하는 질문</h3>
   <span>
     <a href="#">이메일문의</a>
@@ -480,16 +498,16 @@
     <li>
       <a href="#">
         <span>
-          <img src="./images/ico_list13_question.svg" alt="질문">
+          <img src="./images/ico_question.svg" alt="질문">
         </span>
         <span>[정기보험] 정기보험과 종신보험의 차이는 무엇인가요?</span>
         <span>
-          <img src="./images/ico_list13_chevron.svg" alt="">
+          <img src="./images/ico_chevron2.svg" alt="">
         </span>
       </a>
       <div>
         <span>
-          <img src="./images/ico_list13_answer.svg" alt="답변">
+          <img src="./images/ico_answer.svg" alt="답변">
         </span>
         <p>
           두 보험은 보험기간에 차이가 있습니다. <br>
@@ -501,16 +519,16 @@
     <li>
       <a href="#">
         <span>
-          <img src="./images/ico_list13_question.svg" alt="질문">
+          <img src="./images/ico_question.svg" alt="질문">
         </span>
         <span>[정기보험] 가입할 수 있는 최대 가입 금액은얼마인가요?</span>
         <span>
-          <img src="./images/ico_list13_chevron.svg" alt="">
+          <img src="./images/ico_chevron2.svg" alt="">
         </span>
       </a>
       <div>
         <span>
-          <img src="./images/ico_list13_answer.svg" alt="답변">
+          <img src="./images/ico_answer.svg" alt="답변">
         </span>
         <p>답변</p>
       </div>
@@ -518,16 +536,16 @@
     <li>
       <a href="#">
         <span>
-          <img src="./images/ico_list13_question.svg" alt="질문">
+          <img src="./images/ico_question.svg" alt="질문">
         </span>
         <span>[정기보험] 가입하고 몇 달 후에 사망한 경우에도 보장이되나요?</span>
         <span>
-          <img src="./images/ico_list13_chevron.svg" alt="">
+          <img src="./images/ico_chevron2.svg" alt="">
         </span>
       </a>
       <div>
         <span>
-          <img src="./images/ico_list13_answer.svg" alt="답변">
+          <img src="./images/ico_answer.svg" alt="답변">
         </span>
         <p>답변</p>
       </div>
@@ -535,16 +553,16 @@
     <li>
       <a href="#">
         <span>
-          <img src="./images/ico_list13_question.svg" alt="질문">
+          <img src="./images/ico_question.svg" alt="질문">
         </span>
         <span>[정기보험] 가입할 수 있는 최대 가입 금액은얼마인가요?</span>
         <span>
-          <img src="./images/ico_list13_chevron.svg" alt="">
+          <img src="./images/ico_chevron2.svg" alt="">
         </span>
       </a>
       <div>
         <span>
-          <img src="./images/ico_list13_answer.svg" alt="답변">
+          <img src="./images/ico_answer.svg" alt="답변">
         </span>
         <p>답변</p>
       </div>
@@ -552,16 +570,16 @@
     <li>
       <a href="#">
         <span>
-          <img src="./images/ico_list13_question.svg" alt="질문">
+          <img src="./images/ico_question.svg" alt="질문">
         </span>
         <span>[정기보험] 가입하고 몇 달 후에 사망한 경우에도 보장이되나요?</span>
         <span>
-          <img src="./images/ico_list13_chevron.svg" alt="">
+          <img src="./images/ico_chevron2.svg" alt="">
         </span>
       </a>
       <div>
         <span>
-          <img src="./images/ico_list13_answer.svg" alt="답변">
+          <img src="./images/ico_answer.svg" alt="답변">
         </span>
         <p>답변</p>
       </div>
@@ -569,16 +587,16 @@
     <li>
       <a href="#">
         <span>
-          <img src="./images/ico_list13_question.svg" alt="질문">
+          <img src="./images/ico_question.svg" alt="질문">
         </span>
         <span>[정기보험] 정기보험 가입할 때 나이나 직업 등에 따른제한사항이있나요?</span>
         <span>
-          <img src="./images/ico_list13_chevron.svg" alt="">
+          <img src="./images/ico_chevron2.svg" alt="">
         </span>
       </a>
       <div>
         <span>
-          <img src="./images/ico_list13_answer.svg" alt="답변">
+          <img src="./images/ico_answer.svg" alt="답변">
         </span>
         <p>답변</p>
       </div>
@@ -586,16 +604,16 @@
     <li>
       <a href="#">
         <span>
-          <img src="./images/ico_list13_question.svg" alt="질문">
+          <img src="./images/ico_question.svg" alt="질문">
         </span>
         <span>[정기보험] 정기보험 중복가입이가능한가요?</span>
         <span>
-          <img src="./images/ico_list13_chevron.svg" alt="">
+          <img src="./images/ico_chevron2.svg" alt="">
         </span>
       </a>
       <div>
         <span>
-          <img src="./images/ico_list13_answer.svg" alt="답변">
+          <img src="./images/ico_answer.svg" alt="답변">
         </span>
         <p>답변</p>
       </div>
@@ -603,16 +621,16 @@
     <li>
       <a href="#">
         <span>
-          <img src="./images/ico_list13_question.svg" alt="질문">
+          <img src="./images/ico_question.svg" alt="질문">
         </span>
         <span>[정기보험] 건강고객 할인서비스신청은 어떻게 해야 하나요?</span>
         <span>
-          <img src="./images/ico_list13_chevron.svg" alt="">
+          <img src="./images/ico_chevron2.svg" alt="">
         </span>
       </a>
       <div>
         <span>
-          <img src="./images/ico_list13_answer.svg" alt="답변">
+          <img src="./images/ico_answer.svg" alt="답변">
         </span>
         <p>답변</p>
       </div>
@@ -620,16 +638,16 @@
     <li>
       <a href="#">
         <span>
-          <img src="./images/ico_list13_question.svg" alt="질문">
+          <img src="./images/ico_question.svg" alt="질문">
         </span>
         <span>[정기보험] 건강체 보험료 할인율의 최저와 최고케이스보험료를보여주세요</span>
         <span>
-          <img src="./images/ico_list13_chevron.svg" alt="">
+          <img src="./images/ico_chevron2.svg" alt="">
         </span>
       </a>
       <div>
         <span>
-          <img src="./images/ico_list13_answer.svg" alt="답변">
+          <img src="./images/ico_answer.svg" alt="답변">
         </span>
         <p>답변</p>
       </div>
@@ -637,16 +655,16 @@
     <li>
       <a href="#">
         <span>
-          <img src="./images/ico_list13_question.svg" alt="질문">
+          <img src="./images/ico_question.svg" alt="질문">
         </span>
         <span>[정기보험] 자사 동일유형 타상품 대비보험료와 리베생명 정기보험(무)의 표준체 대비 건강체 보험료 예시를보여주세요</span>
         <span>
-          <img src="./images/ico_list13_chevron.svg" alt="">
+          <img src="./images/ico_chevron2.svg" alt="">
         </span>
       </a>
       <div>
         <span>
-          <img src="./images/ico_list13_answer.svg" alt="답변">
+          <img src="./images/ico_answer.svg" alt="답변">
         </span>
         <p>답변</p>
       </div>
@@ -655,6 +673,7 @@
 
   <br><br><br>
   <h2>리스트14</h2>
+  <!-- Feedback. 연도순 나열이기 때문에 <ol> 태그 쓰는 것을 추천 -->
   <span>2010 - 현재</span>
   <h3>
     진화와 변신 <br>
@@ -663,135 +682,157 @@
   <div>
     <img src="./images/img_list14.jpg" alt="">
   </div>
-  <div>
-    <strong>2022</strong>
-    <ul>
-      <li>
-        <a href="#">
-          세계 최장 비거리 기록, 아토맥스 골프공 개발
-          <span>
-            <img src="./images/ico_list14_img.png" alt="">
-          </span>
-        </a>
-      </li>
-      <li>국내최초 무충진 시스템 친환경 인조잔디 개발</li>
-    </ul>
-    <strong>2021</strong>
-    <ul>
-      <li>
-        <a href="#">
-          세계 최초 첨단 석유수지 기술 개발, 양산
-          <span>
-            <img src="./images/ico_list14_img.png" alt="">
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          국내 최초 재활용 플라스틱 원료 사용한 PET 필름 개발
-          <span>
-            <img src="./images/ico_list14_img.png" alt="">
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          최초 주민 참여형 풍력발전 단지 1단계 완공
-          <span>
-            <img src="./images/ico_list14_img.png" alt="">
-          </span>
-        </a>
-      </li>
-    </ul>
-    <strong>2021</strong>
-    <ul>
-      <li>수입차 딜러 사업 확대(아우디, 볼보, AS 사업 등)</li>
-      <li>
-        <a href="#">
-          항바이러스 섬유소재, 큐플러스 개발
-          <span>
-            <img src="./images/ico_list14_img.png" alt="">
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          수소차용 멤브레인 양산 체재 구축
-          <span>
-            <img src="./images/ico_list14_img.png" alt="">
-          </span>
-        </a>
-      </li>
-    </ul>
-    <strong>2019</strong>
-    <ul>
-      <li>코오롱인더스트리, CPI 세계 최초 양산 개시</li>
-      <li>
-        <a href="#">
-          국내 최초 폴리이미드 필름 공장 준공
-          <span>
-            <img src="./images/ico_list14_img.png" alt="">
-          </span>
-        </a>
-      </li>
-    </ul>
-    <strong>2018</strong>
-    <ul>
-      <li>마곡 코오롱 One&Only타워 준공</li>
-    </ul>
-    <strong>15</strong>
-    <ul>
-      <li>바스프 합작법인, 코오롱바스프이노폼 설립</li>
-      <li>팝업컨테이너 쇼핑몰 커먼그라운드 개장</li>
-    </ul>
-    <strong>2013</strong>
-    <ul>
-      <li>상해 중국지주사 설립</li>
-      <li>
-        <a href="#">
-          세계 최초 수소 연료전지 수분제어장치 양산 개발
-          <span>
-            <img src="./images/ico_list14_img.png" alt="">
-          </span>
-        </a>
-      </li>
-    </ul>
-    <strong>2012</strong>
-    <ul>
-      <li>
-        <a href="#">
-          국내 최초 친환경 패시브하우스 국제인증 획득
-          <span>
-            <img src="./images/ico_list14_img.png" alt="">
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          국내 최초 업사이클링 패션 브랜드 RE;CODE 론칭
-          <span>
-            <img src="./images/ico_list14_img.png" alt="">
-          </span>
-        </a>
-      </li>
-    </ul>
-    <strong>2010</strong>
-    <ul>
-      <li>(주)코오롱 지주회사 출범 </li>
-    </ul>
-  </div>
+  <ol>
+    <li>
+      <strong>2022</strong>
+      <ul>
+        <li>
+          <a href="#">
+            세계 최장 비거리 기록, 아토맥스 골프공 개발
+            <span>
+              <img src="./images/ico_img.png" alt="">
+            </span>
+          </a>
+        </li>
+        <li>국내최초 무충진 시스템 친환경 인조잔디 개발</li>
+      </ul>
+    </li>
+    <li>
+      <strong>2021</strong>
+      <ul>
+        <li>
+          <a href="#">
+            세계 최초 첨단 석유수지 기술 개발, 양산
+            <span>
+              <img src="./images/ico_img.png" alt="">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            국내 최초 재활용 플라스틱 원료 사용한 PET 필름 개발
+            <span>
+              <img src="./images/ico_img.png" alt="">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            최초 주민 참여형 풍력발전 단지 1단계 완공
+            <span>
+              <img src="./images/ico_img.png" alt="">
+            </span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>2021</strong>
+      <ul>
+        <li>수입차 딜러 사업 확대(아우디, 볼보, AS 사업 등)</li>
+        <li>
+          <a href="#">
+            항바이러스 섬유소재, 큐플러스 개발
+            <span>
+              <img src="./images/ico_img.png" alt="">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            수소차용 멤브레인 양산 체재 구축
+            <span>
+              <img src="./images/ico_img.png" alt="">
+            </span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>2019</strong>
+      <ul>
+        <li>코오롱인더스트리, CPI 세계 최초 양산 개시</li>
+        <li>
+          <a href="#">
+            국내 최초 폴리이미드 필름 공장 준공
+            <span>
+              <img src="./images/ico_img.png" alt="">
+            </span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>2018</strong>
+      <ul>
+        <li>마곡 코오롱 One&Only타워 준공</li>
+      </ul>
+    </li>
+    <li>
+      <strong>15</strong>
+      <ul>
+        <li>바스프 합작법인, 코오롱바스프이노폼 설립</li>
+        <li>팝업컨테이너 쇼핑몰 커먼그라운드 개장</li>
+      </ul>
+    </li>
+    <li>
+      <strong>2013</strong>
+      <ul>
+        <li>상해 중국지주사 설립</li>
+        <li>
+          <a href="#">
+            세계 최초 수소 연료전지 수분제어장치 양산 개발
+            <span>
+              <img src="./images/ico_img.png" alt="">
+            </span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>2012</strong>
+      <ul>
+        <li>
+          <a href="#">
+            국내 최초 친환경 패시브하우스 국제인증 획득
+            <span>
+              <img src="./images/ico_img.png" alt="">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            국내 최초 업사이클링 패션 브랜드 RE;CODE 론칭
+            <span>
+              <img src="./images/ico_img.png" alt="">
+            </span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>2010</strong>
+      <ul>
+        <li>(주)코오롱 지주회사 출범 </li>
+      </ul>
+    </li>
+  </ol>
 
   <br><br><br>
   <h2>리스트15</h2>
+  <!-- Feedback. 탭메뉴 리스트에 <a> 태그 추가 -->
+  <!-- Feedback. 페이지네이션도 <ol> 태그로 감싸는 것 추천 (하지만 prev/next 버튼이 있다면 단순히 순서 있는 목록으로 보기는 어려우니 <ul>이 더 맞을 것 같다? 실제로 <ul>을 더 많이 쓰기도 하구) -->
+  <!-- Feedback. (이미네이밍 화살표 아이콘 prev/next 넣어주기) -->
+  <!-- Feedback. (맨처음/맨끝은 "prevEnd|nextEnd", "first|end" 같은 네이밍 사례를 찾아보았다.) -->
   <nav>
     <ul>
-      <li>전체</li>
-      <li>알툴즈 제품문의</li>
-      <li>홈페이지 문의</li>
-      <li>회원정보 문의</li>
-      <li>결제 문의</li>
-      <li>제휴 문의</li>
-      <li>기타 문의</li>
+      <li><a href="#">전체</a></li>
+      <li><a href="#">알툴즈 제품문의</a></li>
+      <li><a href="#">홈페이지 문의</a></li>
+      <li><a href="#">회원정보 문의</a></li>
+      <li><a href="#">결제 문의</a></li>
+      <li><a href="#">제휴 문의</a></li>
+      <li><a href="#">기타 문의</a></li>
     </ul>
   </nav>
   <div>
@@ -823,7 +864,7 @@
           <span>회원가입</span>
           <b><span>Q.</span> 회원가입은 어디서 하나요?</b>
           <span>
-            <img src="./images/ico_list13_chevron.svg" alt="">
+            <img src="./images/ico_chevron2.svg" alt="">
           </span>
         </a>
       </li>
@@ -834,33 +875,35 @@
           <span>아이디/비밀번호 찾기</span>
           <b><span>Q.</span> 로그인 아이디와 비밀번호를 잊었어요</b>
           <span>
-            <img src="./images/ico_list13_chevron.svg" alt="">
+            <img src="./images/ico_chevron2.svg" alt="">
           </span>
         </a>
       </li>
     </ul>
     <nav>
       <a href="#">
-        <img src="./images/ico_list15_double_arrow_left.png" alt="처음 페이지로">
+        <img src="./images/ico_prevend.png" alt="처음 페이지로">
       </a>
       <a href="#">
-        <img src="./images/ico_list15_arrow_left.png" alt="이전 페이지로">
+        <img src="./images/ico_prev.png" alt="이전 페이지로">
       </a>
       <a href="#"><span>현재위치</span>1</a>
       <a href="#">
-        <img src="./images/ico_list15_arrow_right.png" alt="다음 페이지로">
+        <img src="./images/ico_next.png" alt="다음 페이지로">
       </a>
       <a href="#">
-        <img src="./images/ico_list15_double_arrow_right.png" alt="마지막 페이지로">
+        <img src="./images/ico_nextend.png" alt="마지막 페이지로">
       </a>
     </nav>
   </div>
 
   <br><br><br>
   <h2>리스트16</h2>
+  <!-- Feedback. '현대 Shop Best'는 리스트의 제목이므로 <hn>태그 사용 추천 (하지만...우리 회사라면...? 궁금하군...내가 참고했던건 옥션. 근데 이런데는 참 제목 태그에 야박하더라..) -->
+  <!-- Feedback. 대체텍스트 할인율/판매가 로 좀 더 구체적으로 -->
   <div>
     <div>
-      <strong>현대 Shop Best</strong>
+      <h3>현대 Shop Best</h3>
       <p>지금 현대Shop에서 인기 있는 상품이에요</p>
       <a href="#">더보기</a>
     </div>
@@ -874,8 +917,8 @@
         </div>
         <p>[안방그릴] 연기 잡는 전기그릴 시즌4 AB701MF(전용가방 증정...)</p>
         <div>
-          <span>14%↓<span>할인</span></span>
-          <span><b>188,000</b>원</span>
+          <span><span>할인율</span>14%↓</span>
+          <span><span>판매가</span><b>188,000</b>원</span>
         </div>
       </a>
     </li>
@@ -888,8 +931,8 @@
         </div>
         <p>[디테일링] 괴물흡입력 17,000Pa BLDC핸디형 청소기...</p>
         <div>
-          <span>35%↓<span>할인</span></span>
-          <span><b>79,000</b>원</span>
+          <span><span>할인율</span>35%↓</span>
+          <span><span>판매가</span><b>79,000</b>원</span>
         </div>
       </a>
     </li>
@@ -901,8 +944,8 @@
         </div>
         <p>동원샘물 무라벨 500mL 20병</p>
         <div>
-          <span>22%↓<span>할인</span></span>
-          <span><b>5,800</b>원</span>
+          <span><span>할인율</span>22%↓</span>
+          <span><span>판매가</span><b>5,800</b>원</span>
         </div>
       </a>
     </li>
@@ -914,8 +957,8 @@
         </div>
         <p>[신차필수템][메이튼] 프리미엄 퀄팅 목쿠션 1+1</p>
         <div>
-          <span>3%↓<span>할인</span></span>
-          <span><b>13,500</b>원</span>
+          <span><span>할인율</span>3%↓</span>
+          <span><span>판매가</span><b>13,500</b>원</span>
         </div>
       </a>
     </li>
@@ -923,65 +966,73 @@
 
   <br><br><br>
   <h2>리스트17</h2>
+  <!-- Feedback. '기업정보', 'IR정보', '지속가능한 경영'이 제목이라면 div > strong, ul 구조 추천
+                  제목이 아니라면 전체 ul > li > strong, ul 구조로 가는 것 추천 (네비메뉴니까 그럴듯 해! 근데 만약 내가 여길 nav로 썼다면...? 구조 고민했는데 얼추 맞았다)
+  -->
   <h3>기업정보·IR정보·지속가능경영</h3>
-  <div>
-    <strong>기업정보</strong>
-    <ul>
-      <li><a href="#">기업이념</a></li>
-      <li><a href="#">주요관계사</a></li>
-      <li><a href="#">수상내역</a></li>
-      <li><a href="#">연혁</a></li>
-      <li><a href="#">CI</a></li>
-    </ul>
-  </div>
-  <div>
-    <strong>IR정보</strong>
-    <ul>
-      <li><a href="#">경영정보</a></li>
-      <li><a href="#">판매실적</a></li>
-      <li><a href="#">주식정보</a></li>
-      <li>
-        <a href="#">
-          배당조회
-          <span><img src="./images/ico_list17_popup.png" alt="새창열기"></span>
-        </a>
-      </li>
-      <li><a href="#">재무정보</a></li>
-      <li><a href="#">공시/공고</a></li>
-      <li><a href="#">IR활동</a></li>
-    </ul>
-  </div>
-  <div>
-    <strong>지속가능 경영</strong>
-    <ul>
-      <li><a href="#">지속가능 경영</a></li>
-      <li><a href="#">스토리</a></li>
-      <li><a href="#">사회공헌백서</a></li>
-      <li><a href="#">CSV 소개</a></li>
-      <li><a href="#">지속가능보고서</a></li>
-    </ul>
-  </div>
+  <ul>
+    <li>
+      <strong>기업정보</strong>
+      <ul>
+        <li><a href="#">기업이념</a></li>
+        <li><a href="#">주요관계사</a></li>
+        <li><a href="#">수상내역</a></li>
+        <li><a href="#">연혁</a></li>
+        <li><a href="#">CI</a></li>
+      </ul>
+    </li>
+    <li>
+      <strong>IR정보</strong>
+      <ul>
+        <li><a href="#">경영정보</a></li>
+        <li><a href="#">판매실적</a></li>
+        <li><a href="#">주식정보</a></li>
+        <li>
+          <a href="#">
+            배당조회
+            <span><img src="./images/ico_newwindow.png" alt="새창열기"></span>
+          </a>
+        </li>
+        <li><a href="#">재무정보</a></li>
+        <li><a href="#">공시/공고</a></li>
+        <li><a href="#">IR활동</a></li>
+      </ul>
+    </li>
+    <li>
+      <strong>지속가능 경영</strong>
+      <ul>
+        <li><a href="#">지속가능 경영</a></li>
+        <li><a href="#">스토리</a></li>
+        <li><a href="#">사회공헌백서</a></li>
+        <li><a href="#">CSV 소개</a></li>
+        <li><a href="#">지속가능보고서</a></li>
+      </ul>
+    </li>
+  </ul>
 
   <br><br><br>
   <h2>리스트18</h2>
+  <!-- Feedback. 좀 더 섬세한 대체텍스트 '책제목', '책정보', 'ISBN', '미리보기' -->
+  <!-- Feedback. (소득공제도 먼가 클릭 가능할까? YES24는 클릭하면 소득공제 안내창으로 연결된다) -->
   <ul>
     <li>
       <a href="#">
-        <img src="./images/ico_list18.png" alt="">
+        <img src="./images/ico_checkbox.png" alt="">
       </a>
       <div>
         <div>
           <img src="./images/@img_list18.jpg" alt="">
         </div>
         <div>
-          <div>홀로 지키는 마음: 현형수 제8시집</div>
-          <div>현형수 지음/명성서림/2023년 07월</div>
-          <div>9791192945484 [소득공제]</div>
+          <div><span>책제목</span>홀로 지키는 마음: 현형수 제8시집</div>
+          <div><span>책정보</span>현형수 지음/명성서림/2023년 07월</div>
+          <div><span>ISBN</span>9791192945484 [소득공제]</div>
           <div>
             <del><span>정가</span>13,000</del>
             <b><span>할인가</span>11,700원</b>
           </div>
           <p>
+            <span>미리보기</span>
             언제나 자연과 대화를 나누면서 풀처럼 따뜻한 자연의 모습에서 저의 작품속에 작금의 인간관계는 시적 감각과 더불어 살아가는 공존에서 함께 갈 수 밖에 없다고 봅니다. 사람들의 깊은 마음속에
             그리워져 ...
           </p>
@@ -995,21 +1046,22 @@
     </li>
     <li>
       <a href="#">
-        <img src="./images/ico_list18.png" alt="">
+        <img src="./images/ico_checkbox.png" alt="">
       </a>
       <div>
         <div>
           <img src="./images/@img_list18.jpg" alt="">
         </div>
         <div>
-          <div>그리움 담고</div>
-          <div>하태수 지음/명성서림/2023년 07월</div>
-          <div>9791192945484 [소득공제]</div>
+          <div><span>책제목</span>그리움 담고</div>
+          <div><span>책정보</span>하태수 지음/명성서림/2023년 07월</div>
+          <div><span>ISBN</span>9791192945484 [소득공제]</div>
           <div>
             <del><span>정가</span>10,000</del>
             <b><span>할인가</span>9,000원</b>
           </div>
           <p>
+            <span>미리보기</span>
             시인의 말그동안 출간된 책 속에서 누락된 글을 모아 이렇게 가리 늦게 흔적을 담아봅니다.
           </p>
         </div>
@@ -1111,7 +1163,7 @@
       <a href="#">로그인/회원가입</a>
       <a href="#">
         <span>검색</span>
-        <img src="./images/ico_list15_search.svg" alt="">
+        <img src="./images/ico_search.svg" alt="">
       </a>
     </div>
   </header>
