@@ -30,6 +30,7 @@
 			values: {
 				videoImageCount: 300, // 이미지 갯수
 				imageSequence: [0, 299], // 이미지 첫번째 순서, 마지막 순서
+				canvas_opacity: [1, 0, { start: 0.9, end: 1 }],
 				messageA_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
 				messageB_opacity_in: [0, 1, { start: 0.3, end: 0.4 }],
 				messageC_opacity_in: [0, 1, { start: 0.5, end: 0.6 }],
@@ -182,6 +183,8 @@
         // (내가 calcValues 어떻게 사용되는지 이해를 제대로 못하고 있나방..)
 				let sequence = Math.round(calcValues(values.imageSequence, currentYOffset)); // 이미지 순서
 				objs.context.drawImage(objs.videoImages[sequence], 0, 0); // 캔버스에 이미지 그리기 (이미지 객체, 그려질 위치 x값, 그려질 위치 y값)
+        objs.canvas.style.opacity = calcValues(values.canvas_opacity, currentYOffset);
+        
 				if (scrollRatio <= 0.22) {
 					// in
 					objs.messageA.style.opacity = calcValues(values.messageA_opacity_in, currentYOffset);
@@ -295,7 +298,10 @@
 		yOffset = window.pageYOffset; // 사용의 용이성을 위해 변수 처리함
 		scrollLoop();
 	})
-	window.addEventListener('load', setLayout); //윈도우가 로드될 때 함수 호출, DOMContentLoded도 가능하지만 모든 에셋 로드 후에 실행하기 위해서 load 사용
+	window.addEventListener('load', () => { //윈도우가 로드될 때 함수 호출, DOMContentLoded도 가능하지만 모든 에셋 로드 후에 실행하기 위해서 load 사용
+    setLayout();
+    sceneInfo[0].objs.context.drawImage(sceneInfo[0].objs.videoImages[0], 0, 0);
+  });
 	window.addEventListener('resize', setLayout); //윈도우 크기 달라질 때마다 새로 적용
 
 })();
