@@ -23,8 +23,13 @@
 				messageB: document.querySelector('#scroll-section-0 .main-message.b'),
 				messageC: document.querySelector('#scroll-section-0 .main-message.c'),
 				messageD: document.querySelector('#scroll-section-0 .main-message.d'),
+        canvas: document.querySelector('#video-canvas-0'), // canvas 객체 선택
+				context: document.querySelector('#video-canvas-0').getContext('2d'), // canvas의 드로잉 컨텍스트 반환함으로써 이미지를 캔버스 안에 그릴 수 있도록 만듦
+				videoImages: [] // 이미지 시퀀스를 담아둘 객체
 			},
 			values: {
+				videoImageCount: 300, // 이미지 갯수
+				imageSequence: [0, 299], // 이미지 첫번째 순서, 마지막 순서
 				messageA_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
 				messageB_opacity_in: [0, 1, { start: 0.3, end: 0.4 }],
 				messageC_opacity_in: [0, 1, { start: 0.5, end: 0.6 }],
@@ -97,6 +102,17 @@
 		},
 	];
 
+  function setCanvasImages() {
+		let imgElem;
+		for (let i = 0; i < sceneInfo[0].values.videoImageCount; i++) {
+			imgElem = new Image();
+			imgElem.src = `./video/001/IMG_${6726 + i}.JPG`;
+			sceneInfo[0].objs.videoImages.push(imgElem);
+		}
+	}
+
+  setCanvasImages();
+
 	function setLayout() {
 		// 각 스크롤 섹션의 높이 세팅
 		for (let i = 0; i < sceneInfo.length; i++) {
@@ -160,6 +176,9 @@
 		switch (currentScene) {
 			case 0:
 				// console.log('0 play');
+        // (내가 calcValues 어떻게 사용되는지 이해를 제대로 못하고 있나방..)
+				let sequence = Math.round(calcValues(values.imageSequence, currentYOffset)); // 이미지 순서
+				objs.context.drawImage(objs.videoImages[sequence], 0, 0); // 캔버스에 이미지 그리기 (이미지 객체, 그려질 위치 x값, 그려질 위치 y값)
 				if (scrollRatio <= 0.22) {
 					// in
 					objs.messageA.style.opacity = calcValues(values.messageA_opacity_in, currentYOffset);

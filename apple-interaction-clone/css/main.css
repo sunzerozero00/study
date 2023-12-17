@@ -29,6 +29,7 @@ a {
 	top: 0;
 	right: 0;
 	left: 0;
+  z-index: 10;
 	height: 44px;
 	padding: 0 1rem;
 }
@@ -37,6 +38,7 @@ a {
 	top: 44px;
 	right: 0;
 	left: 0;
+  z-index: 11;
 	height: 52px;
 	padding: 0 1rem;
 	border-bottom: 1px solid #ddd;
@@ -168,6 +170,12 @@ a {
 #show-scene-2 #scroll-section-2 .sticky-elem,
 #show-scene-3 #scroll-section-3 .sticky-elem {
 	display: block;
+}
+
+.sticky-elem-canvas {
+	top: 0;
+  background: #ccc;
+	height: 100%;
 }
 
 @media (min-width: 1024px) {
