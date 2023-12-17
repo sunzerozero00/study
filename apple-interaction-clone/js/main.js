@@ -136,6 +136,9 @@
 			}
 		}
 		document.body.setAttribute('id', `show-scene-${currentScene}`);
+
+    const heightRatio = window.innerHeight / 1080; // 원래 1080px 높이와의 비율 계산
+    sceneInfo[0].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
 	}
 
 	function calcValues(values, currentYOffset) {

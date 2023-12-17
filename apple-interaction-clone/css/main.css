@@ -67,7 +67,6 @@ a {
 }
 
 .scroll-section {
-	border: 3px solid red;
 	padding-top: 50vh;
 }
 #scroll-section-0 h1 {
@@ -173,9 +172,15 @@ a {
 }
 
 .sticky-elem-canvas {
+  /* background: #ccc; 가로 100% 안 차도 괜찮은거여? */
 	top: 0;
-  background: #ccc;
 	height: 100%;
+}
+.sticky-elem-canvas canvas {
+  /* scale로 크기를 조정하기 때문에 position과 transform을 사용해서 중앙 정렬을 해주어야 함 */
+	position: absolute;
+	top: 50%;
+	left: 50%;
 }
 
 @media (min-width: 1024px) {
