@@ -1,0 +1,47 @@
+html {
+  scroll-behavior: smooth;
+  /* 아이디를 연결하는 링크에 한하여 스크롤 슬라이딩이 일어남 */
+}
+
+.guide-nav {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* left:0; right:0;은 width:100%와 같음 */
+  z-index: 10;
+  background-color: #fff;
+  border-left: 1px solid sandybrown;
+  border-top: 1px solid sandybrown;
+
+  & a {
+    border-right: 1px solid sandybrown;
+    border-bottom: 1px solid sandybrown;
+    padding: 5px;
+    font-size: 20px;
+    color: slategray;
+    text-align: center;
+  }
+}
+
+@media (width < 1024px) {
+  .guide-nav {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+}
+
+
+h2[id*="guide"] {
+  /* h2중에 id속성에 guide를 포함한 모든 요소를 선택한다. */
+  padding-top: 100px;
+  /* 여백을 주게 되면 fixed에 가려진 제목을 보이게함.  */
+  font-size: 30px;
+  color: slategray;
+
+  &::before {
+    content: '🔗';
+  }
+}

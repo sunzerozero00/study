@@ -1,0 +1,22 @@
+/* index 페이지에서 쓸 CSS */
+@layer reset, banner, heading, gallery, button;
+
+@layer banner {
+  /* 배너 스타일 */
+}
+@layer heading {
+  /* 제목 스타일 */
+  .heading {
+    $.large {}
+    $.regular {}
+    $.small {}
+  }
+}
+@layer gallery {
+  /* 갤러리 스타일 */
+}
+@layer button {
+  /* 버튼 스타일 */
+  .btn-more {}
+  .btn-link {}
+}

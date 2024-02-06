@@ -1,0 +1,92 @@
+<!-- 
+  [1회차]
+  CSS 추가 속성 (강의 자료: Notion > Mobile Web)
+    1. REM
+    상대 단위 중 하나, 루트 요소의 글꼴 크기
+    다양한 디바이스에 알맞은 크기 대응, 접근성 대응(페이지 확대/축소?), 작업 편의성 등을 위해 기준 단위는 % 를 사용한다.
+      <REM 사용 준비>
+        - vscode
+        html font-size: 62.5% (16px * 0.625 = 10px, 루트 글꼴 크기를 10px로 설정함으로써 px 값을 쉽게 rem 값으로 계산할 수 있다)
+        body fonf-size: 1rem
+        - figma
+        unit setting > 10
+
+    2. CSS Nesting (CSS 중첩)
+    업데이트 된 CSS 기능으로 SCSS와 같은 전처리기에서 컴파일 하는 과정 없이 브라우저 자체에서 스타일 중첩 기능을 분석하고 사용 가능함
+    SCSS 문법과는 다르게 HTML 요소 앞에 {& 요소} 또는 {:is(요소)} 등과 같은 래핑이 반드시 필요함
+    SCSS와 다르게 컴파일 과정을 거치지 않기 때문에 CSS에서 쓴 것과 동일하게 표시됨
+    따라서 협업할 때 미리 상호협의 및 모든 작업자가 Nesting에 대한 기본 지식이 필요함
+
+    3. @layer (직관적이지 않은 것 같아 복잡하당)
+    CSS 선언 순서에 새롭게 추가된 단위, 종속성에 따른 우선순위 부여의 한계를 극복하기 위해 고안됨 (mt, text-align 같은 util 스타일 등)
+      <새로운 Cascade Layers>
+        1. importance ( important )
+        2. Context (쌓이는 맥락에 따른 우선순위 )
+        3. Style Attribute ( inline-style )
+        4. **Layers**
+        5. Spectificity ( 선택자 점수 )
+        6. Order of Apperance ( 작성순서 )
+    layer 단위를 생성해서 각 레이어의 우선순위를 지정할 수 있다.
+    너무 많은 layer를 불러오는 것은 성능에 영향을 줄 수 있음 (reset, util, swiper 같은 플러그인 등에 선택적으로 사용하면 좋음)
+    오홍 쌤은 swiper 쓸 때 걍 CSS를 새로 만든다고 함. (오왕) 그래서 mt 같은 util 스타일에 유용하게 썼다고 함
+
+    4. calc()
+    
+    5. :has()
+
+  모바일 웹 만들기
+    * 스타일 가이드가 있다는 전제하에 진행
+    1. 스타일 가이드 작성 (Notion > Style Guide Basic)
+      styleguide.html, guide.css
+    2. reset.css 추가 (Notion > Coding Convention > Reset & Normalize CSS)
+      style.css에서 reset.css 불러오기(@layer 사용)
+    3. 변수 세팅
+    4. 각 컴포넌트 스타일 작성
+    5. 레이아웃 및 정렬 관련 (Notion > Style Guide Basic > 공통클래스 기초정의 섹션)
+    6. 컴포넌트 작성
+      네스팅을 활용한 컴포넌트 작성 연습?_?
+      정렬은 가장 마지막에 진행
+
+-->
+
+<!-- 
+  [1회차_과제 소감]
+  1. Footer
+  2. Badge (버튼 만드는 방식 응용)
+  3. Form 정의
+  4. 댓글 정의
+  5. 표 정의 (표 안에 내용물 X)
+
+  1. 질문
+    [footer] 저작권 글씨체는 roboto 하단 링크는 noto sans 근데 적용은 roboto만? 이런건 어케 @_@
+    [footer] 굵은 글씨는 font-weight 설정 없이 <b> 태그 처리만으로 충분한가?
+    [badge] 사이즈 스타일(regular)에 line-height, letter-spacing 스타일이 없는 이유가 모지?
+    [badge] 아이콘 있는 뱃지가 large라는 거슨 좀 이해가 안 가는디..왜냐하면 넘나 근소한 차이라서..? >> 꼭 large로 사이즈 구분하지 않고 내 나름 논리대로 생각해서 나누어도 되겠다 (정답없음)
+    [badge] option tag 뱃지는 배경색도 다르고 보더라인도 다르네 ;; >> 아 이건 뱃지가 아니라 갤러리 뱃지...? ;;;; 흐음 그럼 아이콘도 뱃지가 아니겠네.. 생각보다 비슷한 UI가 많아서 컴포넌트 구분하는 게 쉽지 않구나..
+    [badge] full 타입이 없는 것 같은데도 만들어야 함???
+
+  2. 체크 포인트
+    [버튼 & 뱃지] 컴포넌트의 목적에 따라 클래스 및 스타일 나누기 주의! (색상, 크기, 아이콘)
+      1. 색상과 관련된 스타일만 추가 - border-color, color, background-color
+      2. 크기와 관련된 스타일만 추가 - height, padding, border-width, fong-size
+      3. 아이콘이 있는 버튼 스타일
+    [버튼 & 뱃지] 상하 여백은 필요가 없을지도..!
+
+  3. 피드백 후기
+    - 사이트 제작 시 기본 확인 사항: 가로 스크롤 (아직도 몸에 베이질 않았는가..)
+    - 남은 4회차의 최대 목표: 숙제 다 하고 피드백 받기 . . . !
+  -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수업노트</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body></body>
+
+</html>

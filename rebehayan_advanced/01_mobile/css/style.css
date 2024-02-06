@@ -1,0 +1,781 @@
+/* 전체 페이지에서 공통으로 쓸 CSS */
+@import url(./reset.css) layer(reset);
+@layer reset, layout, component, button, align, space;
+
+/* 변수 */
+/* Figma Styles of your File > 디자이너가 라이브러리화 한 것만 조회 가능 (필요하다면 디자이너에게 요청..) */
+:root {
+  /* Colors */
+  --mint: #00d4ea;
+  --green: #09e27c;
+  --blue: #1d4ed8;
+  --gold: #d8b98b;
+  --orange: #ff6a13;
+  --red: #f93232;
+  --white: #ffffff;
+  --gray21: #212121;
+  --gray33: #333333;
+  --gray4b: #4b4b4b;
+  --gray56: #565656;
+  --gray66: #666666;
+  --gray99: #999999;
+  --grayaa: #aaaaaa;
+  --grayc9: #c9c9c9;
+  --grayd7: #d7d7d7;
+  --grayea: #eaeaea;
+  --grayf5: #f5f5f5;
+  --grayfa: #fafafa;
+  --white60: rgba(255, 255, 255, 0.6);
+  --black60: rgba(0, 0, 0, 0.6);
+  --black40: rgba(0, 0, 0, 0.4);
+  --black10: rgba(0, 0, 0, 0.1);
+
+  /* Shadow */
+  --shadow1: 0.8rem 0.8rem 1.6rem 0rem rgba(0, 0, 0, 0.15);
+  --shadow2: inset 0.2rem 0.2rem 0.2rem 0rem rgba(0, 0, 0, 0.1);
+  --shadow3: 0.8rem 0.8rem 0.8rem 0rem rgba(0, 0, 0, 0.15);
+
+  /* Easing Cubic-bezier */
+  --in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+  --out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --inout-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --inout-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --inout-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --inout-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --inout-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --inout-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --inout-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  --out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --inout-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@layer layout {
+  @layer header {
+    .header__wrapper {
+      display: grid;
+      grid-template-columns: 10rem 1fr 10rem; /* h1 제목 요소는 글씨가 길어져도 한 줄로 가운데 정렬되어야 하기 때문에 1fr로 너비를 고정하지 않음 */
+      padding: 0 0.8rem;
+      align-items: center;
+
+      & h1 {
+        order: 2;
+        align-self: center;
+        text-align: center;
+
+        & a {
+          display: inline-block;
+          font-size: 1.6rem;
+          font-weight: 700;
+          line-height: 100%;
+          letter-spacing: -0.05rem;
+          transform: translateY(-0.1rem);
+
+          .blue & {
+            color: var(--white);
+          }
+
+          .white & {
+            color: var(--gray21);
+          }
+        }
+      }
+
+      .blue & {
+        background-color: var(--blue);
+      }
+
+      .white & {
+        background-color: var(--white);
+        border-bottom: 0.1rem solid var(--blue);
+      }
+
+      > div {
+        order: var(--order);
+        white-space: nowrap;
+        &[style*="1"] {
+          justify-self: start;
+        }
+        /* &[style="--order:1"] {} 선택자를 이렇게 쓸 수도 있음 */
+
+        &[style*="3"] {
+          justify-self: end;
+        }
+        /* &[style="--order:3"]{} 선택자를 이렇게 쓸 수도 있음 */
+      }
+    }
+  }
+
+  @layer footer {
+    .footer__wrapper {
+      padding: 3.3rem 1rem;
+      border-top: 0.2rem solid var(--blue);
+      background-color: var(--gray66);
+    }
+
+    .footer__copy {
+      color: var(--white);
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .footer__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 1.66rem;
+      color: var(--white);
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+      letter-spacing: -0.05rem;
+
+      li {
+        position: relative;
+
+        + li {
+          margin-left: 2.4rem;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -1.2rem;
+            width: 0.1rem;
+            height: 1.4rem;
+            opacity: 0.2;
+            background: var(--white);
+          }
+        }
+      }
+
+      a {
+        vertical-align: top;
+      }
+    }
+  }
+}
+
+@layer button {
+  .btn {
+    /* 버튼 공통 스타일 */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    box-sizing: border-box;
+
+    /* (IF) 색상이 통일되지 않고 변수가 많아진다면 컴케 필요 */
+    /* 1. 색상과 관련된 스타일만 추가 - border-color, color, background-color */
+    &.blue {
+      border-color: var(--blue);
+      background-color: var(--blue);
+      color: var(--white);
+    }
+    &.white {
+      border-color: var(--gray99);
+      background-color: var(--white);
+      color: var(--gray21);
+    }
+    /* 2. 크기와 관련된 스타일만 추가 - height, padding, border-width, fong-size */
+    &.regular {
+      height: 4rem;
+      padding: 0 2rem;
+      border-width: 0.1rem;
+      border-style: solid;
+      border-radius: 0.8rem;
+      font-size: 1.6rem;
+      &.radius {
+        border-radius: 4rem;
+      }
+    }
+    &.large {
+      height: 6rem;
+      padding: 0 2rem;
+      border-width: 0.1rem;
+      border-style: solid;
+      font-size: 1.6rem;
+      &.radius {
+        border-radius: 6rem;
+      }
+    }
+    &.small {
+      height: 3rem;
+      padding: 0 1.2rem;
+      border-width: 0.1rem;
+      border-style: solid;
+      border-radius: 0.4rem;
+      font-size: 1.2rem;
+      &.radius {
+        border-radius: 3rem;
+      }
+    }
+    /* 3. 아이콘이 있는 버튼 스타일 */
+    &.ico1 {
+      &::after {
+        content: "";
+        width: 1.6rem;
+        height: 1.6rem;
+        background: url(../images/ico_btn1.svg) no-repeat 0 0 / contain;
+      }
+    }
+    &.ico2 {
+      &::after {
+        content: "";
+        width: 1.6rem;
+        height: 1.6rem;
+        background: url(../images/ico_btn2.svg) no-repeat 0 0 / contain;
+      }
+    }
+    /* 4. 버튼 width: 100% 스타일 */
+    &.fullsize {
+      width: 100%;
+    }
+  }
+
+  .btn-search {
+    width: 4.4rem;
+    height: 4.4rem;
+
+    .blue & {
+      background: url(../images/ico_search.svg) no-repeat center / 1.6rem auto;
+    }
+
+    .white & {
+      background: url(../images/ico_search_blue.svg) no-repeat center / 1.6rem auto;
+    }
+  }
+
+  .btn-menu {
+    width: 4.4rem;
+    height: 4.4rem;
+
+    .blue & {
+      background: url(../images/ico_menu.svg) no-repeat center / 1.6rem auto;
+    }
+
+    .white & {
+      background: url(../images/ico_menu_blue.svg) no-repeat center / 1.6rem auto;
+    }
+  }
+
+  .btn-declaration {
+    color: var(--red);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.4rem;
+    text-decoration-line: underline;
+
+    &.icon {
+      width: 1.6rem;
+      height: 1.6rem;
+      background: url(../images/ico_declaration.svg) no-repeat 0 0 / contain;
+    }
+  }
+
+  .btn-edit {
+    color: var(--grayc9);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.4rem;
+  }
+
+  .btn-delete {
+    color: var(--red);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.4rem;
+  }
+}
+
+@layer badge {
+  .badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    box-sizing: border-box;
+    &.mint {
+      border-color: var(--mint);
+      background: var(--mint);
+      color: var(--white);
+    }
+    &.orange {
+      border-color: var(--orange);
+      background: var(--orange);
+      color: var(--white);
+    }
+    &.green {
+      border-color: var(--green);
+      background: var(--green);
+      color: var(--white);
+    }
+    &.gray {
+      border-color: var(--grayaa);
+      background: var(--grayaa);
+      color: var(--white);
+    }
+    &.white {
+      border-color: var(--grayea);
+      background: var(--white);
+      color: var(--gray4b);
+    }
+    &.balck {
+      border-color: var(--black60);
+      background: var(--black60);
+      color: var(--white);
+    }
+    &.regular {
+      height: 2.2rem;
+      padding: 0 0.6rem;
+      border-width: 0.1rem;
+      border-style: solid;
+      border-radius: 0.8rem;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 100%;
+      letter-spacing: -0.05rem;
+    }
+    &.large {
+      height: 2.8rem;
+      padding: 0 1rem;
+      border-width: 0.1rem;
+      border-style: solid;
+      border-radius: 0.8rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 100%;
+      letter-spacing: -0.05rem;
+    }
+    &.ico1 {
+      &::before {
+        content: "";
+        width: 0.8rem;
+        height: 1.2rem;
+        background: url(../images/ico_badge1.svg) no-repeat 0 0 / contain;
+      }
+    }
+  }
+}
+
+@layer form {
+  .input,
+  .textarea,
+  .select {
+    border: 0.1rem solid var(--grayd7);
+    width: 100%;
+    border-radius: 0.4rem;
+    background-color: var(--white);
+    color: var(--gray4b);
+    font-size: 1.4rem;
+    line-height: 100%;
+    letter-spacing: -0.05rem;
+    box-sizing: border-box
+  }
+}
+
+@layer align {
+  .align {
+    display: flex;
+    &.both {
+      justify-content: space-between;
+    }
+    &.right {
+      justify-content: flex-end;
+    }
+    &.center {
+      justify-content: center;
+    }
+    &.vt {
+      align-items: flex-start;
+    }
+    &.vm {
+      align-items: center;
+    }
+    &.vb {
+      align-items: flex-end;
+    }
+  }
+  .txt-center {
+    text-align: center;
+  }
+  .txt-right {
+    text-align: right;
+  }
+  .txt-left {
+    text-align: left;
+  }
+}
+
+@layer space {
+  .mt10 {
+    margin-top: 1rem;
+  }
+}
+
+@layer component {
+  @layer gallery {
+    .gallery-list {
+      .gallery & {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+      }
+      .card & {
+        display: grid;
+        gap: 0.8rem;
+      }
+      .list & {
+        > li {
+          padding: 1.6rem 0;
+          + li {
+            border: 1px solid var(--grayea);
+          }
+        }
+
+        & a {
+          display: grid;
+          grid-template-columns: min-content 1fr;
+          gap: 1.6rem;
+        }
+      }
+    }
+    .gallery-list__thumb {
+      overflow: hidden;
+      border-radius: 0.8rem 0.8rem 0 0;
+      .list & {
+        width: 16rem; /* (으악 왔다갔다...!) 근데 나름 규칙이 있음...? */
+        border-radius: 0.8rem;
+        align-self: start;
+      }
+
+      & img {
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 5/3;
+        transition: 0.5s var(--inout-quart);
+        a:hover & {
+          transform: scale(1.2);
+          filter: contrast(120%);
+        }
+      }
+    }
+    .gallery-list__category {
+      color: var(--gray33);
+      font-size: 1rem;
+      line-height: 100%;
+      letter-spacing: -0.05rem;
+    }
+    .gallery-list__title {
+      color: var(--gray21);
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+      letter-spacing: -0.1rem;
+    }
+    .gallery-list__rate {
+      display: flex;
+
+      & .count {
+        width: 7.8rem;
+        height: 1.4rem;
+        background: url(../images/ico_rating.svg) no-repeat 0 0 / 100% auto;
+        &.count0 {
+          background-position: 0 0;
+        }
+        &.count1 {
+          background-position: 0 -1.4em;
+        }
+        &.count2 {
+          background-position: 0 calc(-1.4em * 2);
+        }
+        &.count3 {
+          background-position: 0 calc(-1.4em * 3);
+        }
+        &.count4 {
+          background-position: 0 calc(-1.4em * 4);
+        }
+        &.count5 {
+          background-position: 0 calc(-1.4em * 5);
+        }
+      }
+
+      .rate {
+        color: var(--gray21);
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 1.4rem;
+        letter-spacing: -0.05rem;
+      }
+    }
+    .gallery-list__tag {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      & span {
+        padding: 0.5rem 0.6rem;
+        border-radius: 1.6rem;
+        border: 1px solid var(--grayd7);
+        background: var(--grayfa);
+        color: var(--gray4b);
+        font-size: 1rem;
+        line-height: 1rem;
+        letter-spacing: -0.05rem;
+      }
+    }
+    .gallery-list__info {
+      display: grid;
+      gap: 1.6rem;
+      padding: 1.6rem;
+      border-radius: 0 0 0.8rem 0.8rem;
+      border: 0.1rem solid var(--grayea);
+      border-top: none;
+      .list & {
+        border-radius: 0;
+        border: none;
+        padding: 0;
+      }
+    }
+  }
+  @layer tab {
+    .sort-tab {
+      display: flex;
+      gap: 0.2rem;
+
+      & label {
+        display: block;
+        width: 3.2rem;
+        height: 3.2rem;
+        cursor: pointer;
+        &[aria-label*="카드"] {
+          background: url(../images/ico_sort_card_off.svg) no-repeat 0 0 / contain;
+        }
+        &[aria-label*="갤러리"] {
+          background: url(../images/ico_sort_gallery_off.svg) no-repeat 0 0 / contain;
+        }
+        &[aria-label*="리스트"] {
+          background: url(../images/ico_sort_list_off.svg) no-repeat 0 0 / contain;
+        }
+      }
+      & input:checked {
+        + label[aria-label*="카드"] {
+          background-image: url(../images/ico_sort_card_on.svg);
+        }
+        + label[aria-label*="갤러리"] {
+          background-image: url(../images/ico_sort_gallery_on.svg);
+        }
+        + label[aria-label*="리스트"] {
+          background-image: url(../images/ico_sort_list_on.svg);
+        }
+      }
+    }
+    .tab-type1 {
+      display: flex;
+      > li {
+        flex: 1;
+      }
+      & button {
+        width: 100%;
+        height: 4.2rem;
+        color: var(--gray21);
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        letter-spacing: -0.05rem;
+        border-bottom: 0.2rem solid transparent;
+        background: var(--white);
+        &.--active {
+          border-bottom: 0.2rem solid var(--blue);
+          color: var(--blue);
+          font-weight: 700;
+        }
+      }
+    }
+    /* flex 버전 */
+    /* .tab-type2 {
+      display: flex;
+      justify-content: center;
+      padding: 0 0.4rem;
+      border-radius: 0.8rem;
+      background: var(--grayf5);
+      & li {
+        position: relative;
+        + li {
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 0.1rem;
+            height: 1.4rem;
+            background-color: var(--grayd7);
+            transform: translateY(-50%);
+          }
+        }
+      }
+      & button {
+        padding: 0 1.6rem;
+        height: 4.6rem;
+        color: var(--gray4b);
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 1.4rem;
+        letter-spacing: -0.05rem;
+        background-color: transparent;
+        &.--active {
+          color: var(--blue);
+        }
+      }
+    } */
+
+    /* table 버전 */
+    .tab-type2 {
+      display: table;
+      text-align: center;
+      width: 100%;
+      padding: 0 0.4rem;
+      border-radius: 0.8rem;
+      background: var(--grayf5);
+      box-sizing: border-box;
+      border-spacing: 0; /* table로 스타일링할 때 추가 필요한 스타일: 셀 간 간격 0 */
+      border-collapse: collapse; /* table로 스타일링할 때 추가 필요한 스타일: 기본 border 2줄 > 1줄 */
+
+      & li {
+        position: relative;
+        display: table-cell;
+        + li {
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 0.1rem;
+            height: 1.4rem;
+            background-color: var(--grayd7);
+            transform: translateY(-50%);
+          }
+        }
+      }
+      & button {
+        padding: 0 1.6rem;
+        height: 4.6rem;
+        color: var(--gray4b);
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 1.4rem;
+        letter-spacing: -0.05rem;
+        background-color: transparent;
+        &.--active {
+          color: var(--blue);
+        }
+      }
+    }
+  }
+  @layer comment {
+    .comment {
+      > li {
+        display: grid;
+        gap: 1.6rem;
+        padding: 1.6rem;
+        border-radius: 0.8rem;
+        border: 1px solid var(--grayea);
+        background: var(--white);
+
+        + li {
+          margin-top: 0.8rem;
+        }
+      }
+    }
+
+    .comment__header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .comment__name {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      color: var(--gray21);
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.4rem;
+      letter-spacing: -0.05rem;
+    }
+
+    .comment__date {
+      color: var(--gray4b);
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+    }
+
+    .comment__content {
+      color: var(--gray4b);
+      font-size: 1.2rem;
+      line-height: 150%;
+      letter-spacing: -0.05rem;
+    }
+
+    .comment__bottom {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .comment__reply {
+      > li {
+        display: grid;
+        gap: 1.1rem;
+        padding: 1.8rem 0 1.2rem 2.7rem;
+        border-top: 0.1rem solid var(--grayea);
+        background: url(../images/ico_reply.svg) no-repeat 0 1.2rem / 1.5rem auto;
+      }
+    }
+
+    .comment__box {
+      textarea {
+        height: 6rem;
+        resize: none;
+      }
+    }
+
+    .comment__count {
+      color: var(--gray21);
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+      letter-spacing: -0.05rem;
+    }
+
+    .comment__btn-group {
+      display: flex;
+      margin-left: auto;
+
+      button {
+        position: relative;
+        background-color: transparent;
+
+        + button {
+          margin-left: 2.4rem;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -1.2rem;
+            width: 0.1rem;
+            height: 1.2rem;
+            background-color: var(--grayd7);
+          }
+        }
+      }
+    }
+  }
+}
