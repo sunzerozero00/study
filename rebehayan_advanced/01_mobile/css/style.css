@@ -369,6 +369,74 @@
   }
 }
 
+@layer table {
+  .table-type1 {
+    border-top: 0.1rem solid var(--blue);
+
+    thead {
+      background-color: var(--grayfa);
+
+      & th {
+        padding: 1.5rem 2rem;
+        border-top: 0.1rem solid var(--blue);
+        border-bottom: 0.1rem solid var(--gray99);
+        color: var(--gray21);
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.2rem;
+        letter-spacing: -0.05rem;
+
+        + th {
+          border-left: 0.1rem solid var(--grayd7);
+        }
+      }
+    }
+
+    tbody {
+      & td {
+        padding: 1.4rem 2rem;
+        border-bottom: 0.1rem solid var(--grayea);
+        color: var(--gray4b);
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        letter-spacing: -0.05rem;
+        text-align: center;
+
+        + td {
+          border-left: 0.1rem solid var(--grayea);
+        }
+      }
+    }
+  }
+  .table-type2 {
+    & tr {
+      border-bottom: 0.1rem solid var(--grayea);
+    }
+
+    & th {
+      padding: 1.6rem 0;
+      color: var(--gray21);
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.4rem;
+      letter-spacing: -0.05rem;
+
+    }
+
+    & td {
+      padding: 1.6rem 0;
+      color: var(--gray4b);
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.4rem;
+    }
+  }
+
+  .table-type3 {
+
+  }
+}
+
 @layer form {
   .input,
   .textarea,
