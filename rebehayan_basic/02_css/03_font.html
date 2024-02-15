@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폰트관련CSS</title>
+  <!-- (폰트 자세히 파며는 진짜 마눈데,,,과연...) -->
+  <!-- (흑..웹폰트 말구 다운받아서 쓰는 폰트 궁금했는데........) -->
+  <!-- font-family는 전체 지정(페이지 구축할 때 초반에 결정해야 할 사안 중 하나), font-size는 px 단위 사용 -->
+  <!-- (line-height 궁금쓰. 왜냐믄 고정값 쓰니께,,,다음에 이런 디자인을 받으면 팀장에 함 무러보까,,,) -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li style="font-family: 'Noto Sans KR', sans-serif;">폰트 서체지정</li>
+    <li>일반서체</li>
+    <li style="font-size: 14px;">폰트크기</li>
+    <li style="font-weight: bold;">폰트굵기</li>
+    <li style="font-weight: normal;">
+      기본 폰트가 굵은 요소에 font-weight:normal 스타일 지정<br>
+      font-weight: 400은 기본값임 (오호~)
+      <strong>strong</strong><br>
+      <b>b</b><br>
+      <h6>h1 ~ h6</h6><br>
+      <th>th (table 태그 안에 있을 때 확인 가능)</th>
+    </li>
+    <li style="text-align: center">텍스트, <br> inline요소, <br>inlline-block요소 <br>수평정렬</li>
+    <li>
+      기본이 가운데 정렬인 요소<br>
+      <th>th (table 태그 안에 있을 때 확인 가능)</th><br>
+      <caption>caption (table 태그 안에 있을 때 확인 가능)</caption><br>
+      <button>버튼</button>
+    </li>
+    <li>
+      요소와 텍스트와의 수직 틀어짐 맞춤 <br>
+      요소와 요소의 수직 틀어짐 맞춤<br>
+
+      <!-- vertical-align이 부정확(?)하기 때문에 middle 대신 고정 px 사용 추천 (호오~?) -->
+      <input type="radio" id="" style="vertical-align: 3px;">
+      <label for="" style="font-size: 25px;">라디오 레이블 수직 정렬</label>
+    </li>
+    <li>
+      th, td의 수직 정렬<br>
+      vertical-align: top|middle|bottom
+      <table border="1" width="100px">
+        <tr>
+          <th style="height: 100px;">th</th>
+          <td style="height: 100px; vertical-align: bottom;">td</td>
+        </tr>
+      </table>
+    </li>
+    <li style="color: #ffd200;">
+      폰트 색상<br>
+      rgba() 값도 가능 (그치만 회사에서는 써본적이 없댜 rgba컬러로 오면 먼저 알파값 사용한 이유가 있냐그 여쭤봤음) <br>
+      투명: transparent
+    </li>
+    <li>
+      줄간격: normal은 기본값이므로 적용하지 않아도 됨 / 1과 100%는 같은 값<br>
+      레이웃 목적으로 inline-block, block 요소만 적용됨<br>
+    </li>
+    <li style="text-decoration: underline;">텍스트 선처리</li>
+    <li>
+      텍스트 선처리<br>
+      기본 밑줄 있는 요소 <br>
+      <a href="" style="text-decoration: none;">a 태그 선 normal 처리</a><br>
+      <u>u</u><br>
+      <ins>ins</ins><br>
+      <!-- <del>del</del> 밑줄은 아니지만 참고참고 -->
+    </li>
+    <li style="
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2),
+    5px 5px 0 green; 
+    font-size: 30px;">
+      텍스트 그림자 효과
+    </li>
+    <li></li>
+  </ul>
+</body>
+
+</html>

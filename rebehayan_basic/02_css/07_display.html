@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>display</title>
+</head>
+
+<body>
+  <style>
+    /*     
+    .display {
+      IE 지원하던 시절 CSS 대응을 위해 많이 썼었지만 최신 브라우저에서는 flex, grid로 대체 됨
+      display: list-item;
+      display: table;
+    } 
+    */
+
+    .block {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+      padding: 10px;
+    }
+
+    .inline {
+      /* 콘텐츠만음의 크기를 가짐. width, height 지정되지 않음
+        상하 여백이 지정되지 않음 (상하 padding은 가능하지만 block 요소처럼 위 아래 요소를 밀어내지는 못하기 때문에 겹쳐지는 이슈가 생김)
+      */
+      /* 개행 시에 띄어쓰기 처리되어 의도하지 않은 여백 처리하는 법
+        1. font-size: 0
+        2. 음수 margin -4px 사용
+        3. 개행 없이 붙여쓰기??
+      */
+      width: 100px;
+      height: 100px;
+      border: 1px solid blue;
+      padding: 10px;
+      margin: 10px;
+    }
+  </style>
+
+  <!-- block 요소: 자식요소로 block 요소와 inline 요소를 포함할 수 있다.
+              <hn>, <p>, <address> 태그는 예외적으로 block 요소를 포함할 수 없다
+  -->
+
+  <div class="block"></div>
+
+  <!-- table 요소 -->
+  <table class="block">
+    <tr>
+      <td></td>
+    </tr>
+  </table>
+
+  <!-- block 요소 -->
+  <ul class="block">
+    <li></li>
+  </ul>
+
+
+  <div class="block">text</div>
+  <!-- inline 요소: 자식요소로 block 요소를 포함할 수 없음.
+              단, <a> 태그는 html5부터 예외적 허용
+  -->
+  <span class="inline">inline</span>
+  <a href class="inline">inline</a>
+  <strong class="inline">inline</strong>
+
+  <div class="block">text</div>
+
+  <h3>inline-block</h3>
+  <style>
+    button {
+      /* inline 요소처럼 옆으로 나열되면서 display처럼 가로, 세로, 상하여백 지정이 가능하다 */
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      /* box-sizing: border-box; 버튼의 기본 스타일 */
+      box-sizing: content-box;
+    }
+  </style>
+  <button>inline-block</button>
+  <button>inline-block</button>
+  <button>inline-block</button>
+</body>
+
+</html>

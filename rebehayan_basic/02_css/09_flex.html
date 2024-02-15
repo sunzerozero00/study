@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex</title>
+</head>
+
+<body>
+  <!-- flex 주축, 교차축 이해가 중요함 -->
+  <style>
+    * {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      padding: 10px;
+    }
+
+    .flex {
+      display: flex;
+      /* flex-direction: column; */
+      justify-content: flex-start;
+      /* align-items: stretch; 기본값이기 때문에 wrap 했을 때 여백이 살짝 있음 */
+      align-items: start;
+      flex-wrap: wrap;
+      gap: 10px 5px;
+      width: 400px;
+      height: 100px;
+      margin: 0 auto;
+      border: 1px solid blue;
+    }
+
+    li {
+      width: calc(25% - 5.8px);
+      /* (헐 flex로 여백 맞추는게 일케 어렵다구..! 특히 너비가 %면 문제가 심각하다..) */
+      width: calc(100px - 5.8px);
+      /* px도 쉽지 않아보이눈디... */
+      border: 1px solid red;
+    }
+  </style>
+  <ul class="flex">
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+  </ul>
+</body>
+
+</html>

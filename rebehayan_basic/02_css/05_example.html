@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI 제작</title>
+  <link rel="stylesheet" href="css/05_example.css">
+</head>
+
+<body>
+  <!-- [Feedback]표에 height보다 padding 을 주는 게 좋다는데 어케 주라는지 이해가 안 가넹 (최소 높이는 height에 맞추되 padding을 함께 넣어주기 + box-sizing) -->
+  <!-- [Feedback]tr에 height 주면 안 된다구 했엇나.. -->
+  <!-- [Feedback]padding은 선에 가장 가까운 놈 기준으로 값 맞추면 됨. 논리적이네 -->
+  <h2>표1</h2>
+  <table class="table-type1">
+    <caption>게시판</caption>
+    <colgroup>
+      <col style="width: 76px">
+      <col style="width: 94px">
+      <col style="width: 126px">
+      <col>
+      <col style="width: 94px">
+      <col style="width: 78px">
+      <col style="width: 119px">
+      <col style="width: 105px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>구분</th>
+        <th>부서</th>
+        <th>제목</th>
+        <th>첨부파일</th>
+        <th>작성자</th>
+        <th>작성일</th>
+        <th>조회수</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>261</td>
+        <td>보상</td>
+        <td>수도권수도건설단</td>
+        <td class="txt-left">
+          <a href="#">
+            한강하류권(3차)급수체계조정사업(우선시행구간) 수도권수도건설단 사업 최초 시행구간...
+            <img src="./images/ico_new.svg" alt="최신글">
+          </a>
+        </td>
+        <td>
+          <a href="#">
+            <img src="./images/ico_attach.svg" alt="다운로드">
+          </a>
+        </td>
+        <td>박종환</td>
+        <td>2022-12-07</td>
+        <td>59</td>
+      </tr>
+      <tr>
+        <td>260</td>
+        <td>기타</td>
+        <td>광주전남지역본부</td>
+        <td class="txt-left"><a href="#">[장흥수도관리단]관로시설 긴급 복구 협력업체 지원 사업</a></td>
+        <td>
+          <a href="#">
+            <img src="./images/ico_attach.svg" alt="다운로드">
+          </a>
+        </td>
+        <td>김형우</td>
+        <td>2022-12-07</td>
+        <td>51</td>
+      </tr>
+      <tr>
+        <td>259</td>
+        <td>기타</td>
+        <td>경남부산지역본부</td>
+        <td class="txt-left"><a href="#">[장흥수도관리단]관로시설 긴급 복구</a></td>
+        <td>
+          <a href="#">
+            <img src="./images/ico_attach.svg" alt="다운로드">
+          </a>
+        </td>
+        <td>관리자</td>
+        <td>2022-12-07</td>
+        <td>53</td>
+      </tr>
+      <!-- Case. 게시물이 0개일 때 -->
+      <tr>
+        <td colspan="8">현재 게시물이 존재하지 않습니다.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+  <h2>표2</h2>
+  <!-- Tip. 재활용 할 수 있는 요소는 '중요공지' 색상 뿐 -->
+  <!-- Tip. 테이블은 단일 컴포넌트임: type2 -->
+  <!-- Tip. 스타일이 초기화 된 컴포넌트를 보면서 가장 쉬운 것부터 시작 -->
+  <table class="table-type2">
+    <caption>공지사항</caption>
+    <colgroup>
+      <col style="width: 86px">
+      <col>
+      <col style="width: 109px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>공지일</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="txt-notice">중요공지</th>
+        <td class="txt-left"><a href="#">[공지] 위치정보이용약관 변경에 따른 사전공지</a></td>
+        <td class="txt-date">2019.01.02</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td class="txt-left"><a href="#">SK플래닛 홈페이지가 새롭게 단장하였습니다.SK플래닛 홈페이지가 새롭게 단장하였습니다.</a></td>
+        <td class="txt-date">2019.01.02</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td class="txt-left"><a href="#">SK플래닛 홈페이지가 새롭게 단장하였습니다.SK플래닛 홈페이지가 새롭게 단장하였습니다.2줄테스트SK플래닛 홈페이지가 새롭게
+            단장하였습니다.SK플래닛 홈페이지가 새롭게 단장하였습니다.2줄테스트SK플래닛 홈페이지가 새롭게 단장하였습니다.SK플래닛 홈페이지가 새롭게 단장하였습니다.2줄테스트SK플래닛 홈페이지가 새롭게
+            단장하였습니다.SK플래닛 홈페이지가 새롭게 단장하였습니다.2줄테스트SK플래닛 홈페이지가 새롭게 단장하였습니다.SK플래닛 홈페이지가 새롭게 단장하였습니다.2줄테스트SK플래닛 홈페이지가 새롭게
+            단장하였습니다.SK플래닛 홈페이지가 새롭게 단장하였습니다.2줄테스트SK플래닛 홈페이지가 새롭게 단장하였습니다.SK플래닛 홈페이지가 새롭게 단장하였습니다.2줄테스트SK플래닛 홈페이지가 새롭게
+            단장하였습니다.SK플래닛 홈페이지가 새롭게 단장하였습니다.2줄테스트SK플래닛 홈페이지가 새롭게 단장하였습니다.SK플래닛 홈페이지가 새롭게 단장하였습니다.2줄테스트SK플래닛 홈페이지가 새롭게
+            단장하였습니다.SK플래닛 홈페이지가 새롭게 단장하였습니다.2줄테스트</a></td>
+        <td class="txt-date">2019.01.02</td>
+      </tr>
+      <!-- Case. 게시글이 없는 경우 -->
+      <tr>
+        <td colspan="3">현재 게시물이 존재하지 않습니다.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+  <h2>표5</h2>
+  <table class="table-type5">
+    <caption>초중고 교육 요건</caption>
+    <colgroup>
+      <col style="width: 237px">
+      <col>
+      <col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th></th>
+        <th class="border-none">교육목표</th>
+        <th class="border-none">교육내용</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>초등학교 17시간 필수교육</th>
+        <td>SW 소양교육 / SW코딩 이해</td>
+        <td>디지털소양 컴퓨터사고력 체험</td>
+      </tr>
+      <tr>
+        <th>중학교 34시간 필수교육</th>
+        <td>SW 소양교육</td>
+        <td>컴퓨팅사고력 기반 현실세계 문제 해결 (SW코딩)</td>
+      </tr>
+      <tr>
+        <th>고등학교 심화선택, 전문교과</th>
+        <td>
+          컴퓨터 융합활동을 통한 <br>
+          창의적 산출물 제작 및 대학 진로 연계학습
+        </td>
+        <td>컴퓨팅 사고력 기반 융합적 문제 해결 (SW코딩)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+  <h2>표9</h2>
+  <table class="table-type9">
+    <caption>견학 프로그램 소개</caption>
+    <colgroup>
+      <col style="width: 174px">
+      <col>
+      <col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th>구분</th>
+        <th>청소년 체험</th>
+        <th>일반인 견학</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>견학 시간</th>
+        <td colspan="2">
+          [오전] 10~12시, [오후] 2~4시 <br>
+          <strong>※ 위 시간에만 견학이 가능하며, 주말 및 공휴일은 운영하지 않습니다.</strong>
+        </td>
+      </tr>
+      <tr>
+        <th>견학 대상</th>
+        <td>15~40인 초·중·고등학생 및 청소년/교원 단체</td>
+        <td>15~40인 대학생 및 일반인 단체(관련 기관 포함)</td>
+      </tr>
+      <tr>
+        <th>견학 코스</th>
+        <td class="course-info txt-left">
+          <strong>[A코스] 1시간</strong> <br>
+          원자력안전체험관 체험 활동 <br>
+          <strong>[B코스] 2시간</strong> <br>
+          원자력안전체험관 체험 활동 및 연구시설 견학 1곳
+        </td>
+        <td class="course-info txt-left">
+          <strong>[A코스] 1시간</strong> <br>
+          홍보 영상 시청 및 연구시설 견학 1곳 <br>
+          <strong>[B코스] 2시간</strong> <br>
+          홍보 영상 시청 및 연구시설 견학 2곳 이상
+        </td>
+      </tr>
+      <tr>
+        <th>문의처</th>
+        <td class="tel-info txt-left">
+          <strong>과학문화소통팀 박혜영</strong> <br>
+          - 전화 041-168-4425<br>
+          - 팩스 041-161-1428<br>
+          - 이메일 njeong@kaer.re.kr
+        </td>
+        <td class="tel-info txt-left">
+          <strong>과학문화소통팀 김범준</strong> <br>
+          - 전화 041-168-4425<br>
+          - 팩스 041-161-1428<br>
+          - 이메일 njeong@kaer.re.kr
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+  <h2>표11</h2>
+  <table class="table-type11">
+    <caption>
+      요금 안내
+    </caption>
+    <colgroup>
+      <col style="width: 310px">
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th colspan="2">구분</th>
+        <th>주중</th>
+        <th>주말</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th rowspan="4">그린피</th>
+        <th>정회원</th>
+        <td class="txt-right"><b>60,000</b> 원</td>
+        <td class="txt-right"><b>60,000</b> 원</td>
+      </tr>
+      <tr>
+        <th>가족회원</th>
+        <td class="txt-right"><b>60,000</b> 원</td>
+        <td class="txt-right"><b>150,000</b> 원</td>
+      </tr>
+      <tr>
+        <th>지명회원</th>
+        <td class="txt-right"><b>80,000</b> 원</td>
+        <td class="txt-right">
+          <b>210,000</b> 원<br>
+          <b>195,000</b> 원
+        </td>
+      </tr>
+      <tr>
+        <th>비회원</th>
+        <td class="txt-right"><b>150,000</b> 원</td>
+        <td class="txt-right">
+          <b>210,000</b> 원<br>
+          <b>150,000</b> 원
+        </td>
+      </tr>
+      <tr>
+        <th colspan="2">카트사용료</th>
+        <td colspan="2"><b>80,000</b> 원</td>
+      </tr>
+      <tr>
+        <th colspan="2">보조원 봉사료</th>
+        <td colspan="2"><b>120,000</b> 원 (팀당)</td>
+      </tr>
+      <tr>
+        <th colspan="2">대여료</th>
+        <td colspan="2">
+          <span>골프화, 퍼터 <b>10,000</b> 원</span>
+          <span>대여클럽 <b>50,000</b> 원</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <div class="list-type"> 방식말고 <h3>, <ul> 태그에 직접 클래스 주고 제어하기 -->
+  <br><br><br>
+  <h2>리스트3</h2>
+  <div class="list-type3">
+    <h3>유의사항</h3>
+    <ul>
+      <li>- 리포인트 또는 리페이 앱을 통해 신청한 고객님께만 적립이 가능합니다.</li>
+      <li>- 이벤트 신청을 하더라도 2019.3.1(금) 이전에 리페이 결제 이력이 있는 경우 적립제외됩니다.</li>
+      <li>- 기간 전 기존 리페이 결제 이력이 있는 경우 제외됩니다.</li>
+      <li>- 리페이 생애 첫 결제 이벤트는 제휴사별 중복 적용되지 않으며 첫 결제한 제휴사 조건에 따라, 회원 당 총 1회만 적립 됩니다.</li>
+      <li>- 리페이 첫 결제를 상기 제휴사 외에 다른 곳에서 한 경우 제외됩니다.</li>
+      <li>- 결제 취소 시 포인트 적립이 제외됩니다.</li>
+    </ul>
+  </div>
+
+  <br><br><br>
+  <h2>리스트5</h2>
+  <div class="list-type5">
+    <h3>제 1 조 (목적)</h3>
+    <p>이 이용약관(이하 '약관')은 ㈜휴넷 (이하 회사라 합니다)와 이용 고객(이하 '회원')간에 회사가 제공하는 서비스의 가입조건 및 이용에 관한 제반 사항과 경영지식몰의 상품 구입, 기타 필요한 사항을
+      구체적으로 규정함을 목적으로 합니다.</p>
+    <h3>제 2 조 (이용약관의 효력 및 변경)</h3>
+    <ol class="list">
+      <li>
+        (1) 이 약관은 휴넷 웹사이트(http://www.hunet.co.kr) 에서 온라인으로 공시함으로써 효력을 발생하며, 합리적인 사유가 발생할 경우 관련법령에 위배되지 않는 범위 안에서 개정될 수
+        있습니다. 개정된 약관은 온라인에서 공지함으로써 효력을 발휘하며,
+        이용자의 권리 또는 의무 등 중요한 규정의 개정은 사전에 공지합니다.
+      </li>
+      <li>(2) 회사는 합리적인 사유가 발생될 경우에는 이 약관을 변경할 수 있으며, 약관을 변경할 경우에는 지체 없이 이를 사전에 공시합니다.</li>
+      <li>
+        (3) 회사가 약관을 변경할 경우에는 적용일자 및 변경사유를 명시하여 현행약관과 함께 사이트 초기화면에 그 적용일자 7일(이용자에게 불리한 변경 또는 중대한 사항의 변경은 30일)이전부터 적용일자
+        이후 상당한 기간 동안 공지하고, 기존 회원에게는
+        변경될 약관, 적용일자 및 변경사유(중요내용에 대한 변경인 경우 이에 대한 설명을 포함)를 이메일 또는 문자 메시 발송합니다
+      </li>
+      <li>(4) 회원은 변경된 약관에 동의하지 않을 경우 회원 탈퇴(해지)를 요청할 수 있으며, 변경된 약관의 효력 발생일로부터 7일 이후에도 거부의사를 표시하지 아니하고 서비스를 계속 사용 할 경우
+        약관의 변경 사항에 동의한 것으로 간주됩니다.</li>
+    </ol>
+    <h3>제 3 조 (약관외 준칙) </h3>
+    <ol class="list">
+      <li>① 이 약관은 회사가 제공하는 개별서비스에 관한 이용안내(이하 서비스별 안내라 합니다)와 함께 적용합니다.</li>
+      <li>② 이 약관에 명시되지 아니한 사항에 대해서는 관계법령 및 서비스별 안내의 취지에 따라 적용할 수 있습니다.</li>
+    </ol>
+    <h3>제 4 조 (용어의 정의) </h3>
+    <ol class="list">
+      <li>
+        ① 이 약관에서 사용하는 용어의 정의는 다음과 같습니다.
+        <ol class="sublist">
+          <li>1. '몰'이라 함은 ㈜휴넷이 재화 또는 용역을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 재화 또는 용역을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러
+            사이버몰을 운영하는 사업자의 의미로도 사용합니다.</li>
+          <li>2. '회원'이라 함은 회원제서비스를 이용하는 이용자를 말하며, "몰"이 제공하는 서비스를 지속적으로 이용할 수 있는 자를 말합니다.</li>
+          <li>3. '이용계약'이라 함은 서비스 이용과 관련하여 회사와 이용고객 간에 체결 하는 계약을 말합니다.</li>
+          <li>4. '이용자번호(ID)'라 함은 이용고객의 식별과 이용고객의 서비스 이용을 위하여 이용고객이 선정하고 회사가 부여하는 문자와 숫자의 조합을 말합니다.</li>
+          <li>5. '비밀번호'라 함은 이용고객이 부여 받은 이용자번호와 일치된 이용고객 임을 확인하고 이용고객의 권익보호를 위하여 이용고객이 선정한 문자와 숫자의 조합을 말합니다.</li>
+          <li>6. '해지'라 함은 회사 또는 회원이 이용계약을 해약하는 것을 말합니다.</li>
+        </ol>
+      </li>
+      <li>② 이 약관에서 사용하는 용어의 정의는 제1항에서 정하는 것을 제외하고는 관계법령 및 서비스별 안내에서 정하는 바에 의합니다.</li>
+    </ol>
+  </div>
+</body>
+
+</html>

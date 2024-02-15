@@ -1,0 +1,292 @@
+/* ID, Class, 태그 선택자만 사용해서 뎁스를 최대한 간결하게 해보기 */
+
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  font-style: normal;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+body {
+  margin: 20px;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption {
+  display: none; /* 임시코드!!! */
+}
+
+/***** 표 *****/
+
+/* 표1 */
+.table-type1 {
+  border-top: 2px solid #12a3cc;
+  text-align: center;
+}
+
+.table-type1 thead tr {
+  border-bottom: 1px solid #b2b2b2;
+}
+
+.table-type1 thead th {
+  height: 47px;
+  color: #494949;
+  font-size: 14px;
+}
+
+.table-type1 tbody tr {
+  height: 64px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.table-type1 tbody td {
+  color: #717171;
+  font-size: 14px;
+}
+
+/* 표2 */
+/* .table-type2 {
+  border: 1px solid red; 영역 파악이 어려우면 border를 넣어보는 방법도 있음
+} */
+
+/* table, th, td 안전빵 선언 (거뢔?) */
+/* tr, tbody, thead는 여백같은 스타일은 주지 말아라?_? */
+
+.table-type2 {
+  border-top: 1px solid #000;
+  text-align: center;
+}
+
+.table-type2 thead th {
+  height: 45px;
+  border-bottom: 1px solid #000;
+  background: #f2f2f2;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.table-type2 tbody tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.table-type2 tbody td {
+  /* height: 47px; */
+  font-size: 14px;
+  color: #000;
+  padding: 13px 0;
+}
+
+.table-type2 .txt-date {
+  color: #999;
+}
+
+.table-type2 .txt-notice {
+  color: #e51837;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* 표5 */
+.table-type5 {
+  border-top: 2px solid #333;
+  text-align: center;
+}
+
+.table-type5 th {
+  border-right: 1px solid #c7c7c7;
+  background: #f8f8f8;
+  font-weight: 400;
+}
+
+.table-type5 tr {
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.table-type5 td {
+  color: #333;
+  height: 66px;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.table-type5 thead th {
+  height: 64px;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.table-type5 thead tr {
+  /* height: 64px; */
+}
+
+.table-type5 tbody tr {
+  /* height: 66px; */
+}
+
+.table-type5 .border-none {
+  border: none;
+}
+
+/* 표9 */
+.table-type9 {
+  border-top: 2px solid #393d46;
+  text-align: center;
+}
+
+.table-type9 th,
+.table-type9 td {
+  padding: 16px 10px;
+}
+
+.table-type9 td {
+  border-left: 1px solid #e1e1e1;
+}
+
+.table-type9 thead {
+  border-bottom: 1px solid #acb0b6;
+}
+
+.table-type9 thead th {
+  color: #000;
+}
+
+.table-type9 tbody {
+  color: #6a6a6a;
+}
+
+.table-type9 tbody tr {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.table-type9 tbody th {
+  color: #6a6a6a;
+  font-weight: 400;
+}
+
+.table-type9 tbody td {
+  padding: 16px 20px;
+}
+
+.table-type9 .course-info {
+  line-height: 30px;
+}
+
+.table-type9 .tel-info {
+  line-height: 27px;
+}
+
+.table-type9 .tel-info strong {
+  line-height: 35px;
+}
+
+/* 표11 */
+.table-type11 {
+  border-top: 2px solid #bd0000;
+  color: #585858;
+  text-align: center;
+}
+
+.table-type11 tr {
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.table-type11 th,
+.table-type11 td {
+  padding: 10px;
+}
+
+.table-type11 th {
+  font-weight: 400;
+}
+
+.table-type11 tbody th {
+  border-right: 1px solid #e4e4e4;
+  background: #fafafa;
+}
+
+.table-type11 tbody td {
+  border-left: 1px solid #e4e4e4;
+}
+
+/* 공통 CSS */
+.txt-left {
+  text-align: left;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+.border-none {
+  border: none;
+}
+
+/***** 리스트 *****/
+
+/* 리스트3 */
+.list-type3 h3 {
+  color: #000;
+  font-size: 17px;
+}
+
+.list-type3 ul {
+  margin-top: 15px;
+}
+.list-type3 li {
+  color: #898989;
+  font-size: 13px;
+  line-height: 24px;
+}
+
+/* 리스트5 */
+.list-type5 h3 {
+  margin-top: 63px;
+  color: #777;
+  line-height: 2;
+  letter-spacing: -0.5px;
+}
+
+.list-type5 p {
+  margin-top: 10px;
+}
+
+.list-type5 .list {
+  margin-top: 10px;
+}
+
+.list-type5 li {
+  padding-left: 16px;
+  color: #777;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: -0.5px;
+}
+
+.list-type5 .sublist li {
+  padding-left: 17px;
+}

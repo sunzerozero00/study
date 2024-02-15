@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 선택자 점수_우선순위</title>
+  <style>
+    * {
+      /* 전체 선택자(0점): 브라우저 성능에 영향을 줌. (리셋 스타일과 같은 특별한 경우를 제외하고 사용하지 않음) */
+      /* important(절대값): 점수체계를 무너뜨리는 조커 같은 놈으로 정말정말 특별한 경우에만 사용 */
+      /* color: red !important; */
+    }
+
+    div {
+      /* 태그 선택자(1점) */
+      color: blue;
+    }
+
+    .div {
+      /* 클래스 선택자(10점) */
+      color: orange;
+    }
+
+    #div {
+      /* ID 선택자(100점) */
+      color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 인라인 스타일(1000점) -->
+  <div class="div" id="div" style="color: pink;">글씨</div>
+
+  <div class="a">
+    <p class="b">text</p>
+  </div>
+  <style>
+    div.a .b {
+      color: red;
+    }
+
+    .a p.b {
+      color: blue;
+    }
+  </style>
+  <!-- 책갈피 링크 또는 내부 링크 -->
+  <a href="#content">아래 바로가기</a>
+  <div style="height: 100vh;"></div>
+  <div style="height: 100vh;"></div>
+  <div id="content">여기가 아래이지요</div>
+  <div style="height: 100vh;"></div>
+
+  <!-- 다중 클래스는 무한대로 가능. 다중 아이디는 불가능 -->
+  <div class="box border pl"></div>
+</body>
+
+</html>

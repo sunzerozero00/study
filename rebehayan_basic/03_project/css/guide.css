@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+html {
+  scroll-behavior: smooth; /* 아이디를 연결하는 링크에 한하여 스크롤 슬라이딩이 일어남 */
+}
+.guide-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0; /* left:0; right:0;은 width:100%와 같음 */
+  z-index: 10;
+  background-color: #fff;
+}
+.guide-nav a {
+  border: 1px solid skyblue;
+  padding: 5px;
+}
+h2[id*="guide"] {
+  /* h2중에 id속성에 guide를 포함한 모든 요소를 선택한다. */
+  padding-top: 100px; /* 여백을 주게 되면 fixed에 가려진 제목을 보이게함.  */
+}

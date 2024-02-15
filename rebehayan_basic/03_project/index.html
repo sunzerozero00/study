@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/guide.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" defer src="js/dialog.js"></script>
+  <title>Document</title>
+  <!-- 라이브서버에서 index는 자동으로 인식함 오~ -->
+</head>
+
+<body>
+  <!-- header -->
+  <header class="header">
+    <div class="header_inner m0auto">
+      <h1>
+        <a href="" class="logo" aria-label="REBEHAYAN Learning Platform"></a>
+      </h1>
+      <nav>
+        <ul class="gnb">
+          <li><a href="">Rebehayan</a></li>
+          <li><a href="">배움라운지</a></li>
+          <li><a href="">인(in)맥</a></li>
+          <li><a href="">커뮤니티</a></li>
+        </ul>
+      </nav>
+      <div class="profile">
+        <strong>하성필님</strong>안녕하세요!
+        <div class="profie__photo">
+          <!-- <img src="images/@profile.png" alt=""> -->
+          <img src="images/@thumb.png" alt="">
+          <span class="profile__state">12</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- main -->
+  <main>
+    <!-- visual -->
+    <div class="visual">
+      <img src="images/img_visual1.png" alt="">
+      <div class="">
+        <h2 class="visual__title">배움라운지</h2>
+        <p class="visual__text">
+          Rebehayan은 콘텐츠 경쟁력을 바탕으로 국내외 성장을 지속하고 있습니다. <br>
+          공정한 IR 커뮤니케이션을 통해 투자가 여러분과 함께하겠습니다.
+        </p>
+      </div>
+    </div>
+    <div class="breadcrumbs">
+      <div class="a11y-hidden">현재위치</div>
+      <ul class="m0auto">
+        <li><a href="">홈</a></li>
+        <li><a href="">러닝라운지</a></li>
+      </ul>
+    </div>
+    <nav class="guide-nav">
+      <a href="#guide1">제목</a>
+      <a href="#guide2">정렬</a>
+      <a href="#guide3">폼</a>
+      <a href="#guide4">버튼</a>
+      <a href="#guide5">표</a>
+      <a href="#guide6">텍스트</a>
+    </nav>
+    <h2 id="guide1">제목</h2>
+
+    <!-- 클래스로 구분을 주고, 태그는 동일하게 쓰는 게 좀 더 안전하다 -->
+    <h2 class="heading regular">
+      <span class="subtitle">EDM 추천 프로그램</span>
+      CONTENTS LOUNGE
+    </h2>
+    <h2 class="heading small">DIY LOUNGE</h2>
+
+
+    <h2 id="guide2">정렬</h2>
+    <!-- 
+      [정렬 구분]
+      1. 텍스트 정렬
+      2. 컴포넌트 정렬
+    -->
+
+    <!-- 텍스트 정렬 -->
+    <div class="txt-left">좌측 텍스트 정렬</div>
+    <div class="txt-center">가운데 텍스트 정렬</div>
+    <div class="txt-right">우측 텍스트 정렬</div>
+
+
+    <!-- 컴포넌트 정렬 -->
+    <div class="align left">
+      <div>좌측 컴포넌트</div>
+    </div>
+    <div class="align center">
+      <div>중앙 컴포넌트</div>
+    </div>
+    <div class="align both">
+      <div>좌측 컴포넌트</div>
+      <div>우측 컴포넌트</div>
+    </div>
+    <div class="align triple">
+      <div>좌측 컴포넌트</div>
+      <div>중앙 컴포넌트</div>
+      <div>우측 컴포넌트</div>
+    </div>
+    <div class="align right">
+      <div>우측 컴포넌트</div>
+    </div>
+
+    <!-- 수직 정렬 -->
+    <div class="align vt">
+      <div>위쪽 컴포넌트</div>
+    </div>
+    <div class="align vm">
+      <div>중앙 컴포넌트</div>
+    </div>
+    <div class="align vb">
+      <div>아래 컴포넌트</div>
+    </div>
+
+    <h2 id="guide3">폼</h2>
+    <input type="text" class="input" placeholder="정보를 입력하세요">
+    <br>
+    <br>
+    <!-- 드롭다운 열림/닫힘 화살표 커스텀은 불가능한 구조 -->
+    <select class="select">
+      <option>선택하세요.</option>
+    </select>
+    <br>
+    <br>
+    <textarea class="textarea" placeholder="정보를 입력해주세요"></textarea>
+    <br>
+    <br>
+    <input type="file" id="file_1" class="a11y-hidden">
+    <label for="file_1" class="input-file">파일 업로드</label>
+
+    <div class="select-date-all">
+      <div class="select-date">
+        <input type="text" class="input" placeholder="YYYY.MM.DD">
+        <select class="select">
+          <option>00</option>
+        </select>
+        <select class="select">
+          <option>00</option>
+        </select>
+      </div>
+      ~
+      <div class="select-date">
+        <input type="text" class="input" placeholder="YYYY.MM.DD">
+        <select class="select">
+          <option>00</option>
+        </select>
+        <select class="select">
+          <option>00</option>
+        </select>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <input type="checkbox" id="chk1_1" class="a11y-hidden">
+    <label for="chk1_1" class="checkbox">선택하세요</label>
+
+
+    <h2 id="guide4">버튼</h2>
+    <!-- 
+      [버튼의 종류]
+      1. 아이콘만 있는 버튼
+      2. 텍스트 + 아이콘이 있는 버튼
+      2. width 100% 인 버튼
+    -->
+    <!-- 
+      [버튼 최소 단위] >> 심화에서 배울 것
+      1. 크기
+      2. 색상
+      2. 아이콘
+    -->
+    <!-- 단순화를 위해 다른건 다른 컴포넌트로 나눔 -->
+    <button class="btn-white">버튼</button>
+    <a href="" class="btn-white">버튼</a>
+    <a href="" class="btn-white-radius">버튼</a>
+    <a href="" class="btn-red-radius">버튼</a>
+    <a href="" class="btn-fav-radius">버튼</a>
+    <a href="" class="btn-confirm">확인</a>
+
+    <h2 id="guide5">표</h2>
+
+    <table class="table-type1">
+      <caption>표제목</caption>
+      <colgroup>
+        <col style="width: 200px;">
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>제목</th>
+          <td>
+            <input type="text" class="input" placeholder="정보를 입력하세요">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 테이블 리스트 -->
+    <div class="table-list-top">
+      <div class="count">
+        등록된 게시물
+        <span class="num">4,690개</span>
+      </div>
+      <div class="search-box">
+        <input type="search" class="search" placeholder="검색어를 입력하세요">
+        <button class="btn-search">검색</button>
+      </div>
+    </div>
+    <table class="table-list">
+      <caption>공지사항 리스트</caption>
+      <colgroup>
+        <col style="width: 80px">
+        <col>
+        <col style="width: 120px">
+        <col style="width: 140px">
+        <col style="width: 80px">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>글제목</th>
+          <th>작성자</th>
+          <th>작성일</th>
+          <th>조회</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td class="txt-left">
+            <a href="" class="link ellipsis">
+              신규 참여자 러닝 어카운트 지금 완료 공지
+            </a>
+          </td>
+          <td>관리자</td>
+          <td>2020-10-22</td>
+          <td>26</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td class="txt-left">
+            <a href="" class="link ellipsis">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, quasi laudantium vitae dolor aspernatur
+              consequatur sed minima id harum suscipit illum, soluta molestias qui earum voluptatum, nisi itaque aliquid
+              eos sint aperiam ipsum! Recusandae temporibus consequatur, dolorum iusto omnis, eos nulla ut qui magnam
+              excepturi delectus accusantium hic sapiente repellendus.
+            </a>
+          </td>
+          <td>관리자</td>
+          <td>2020-10-22</td>
+          <td>26</td>
+        </tr>
+        <!-- Case. 게시글 없을 경우 -->
+        <tr>
+          <td colspan="5">게시글이 없습니다.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="guide6">텍스트</h2>
+  </main>
+  <footer class="footer">푸터영역</footer>
+
+  <!-- 팝업 -->
+  <button class="btn-open">팝업열기</button>
+  <dialog class="dialog">
+    <h2 autofocus tabindex="0">제목</h2>
+    팝업
+    <button class="btn-close">팝업닫기</button>
+  </dialog>
+</body>
+
+</html>

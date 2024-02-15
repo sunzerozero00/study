@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transform</title>
+  <!-- Transform은 blcok요소에서만 적용됨 (inline요소는 적용되지 않음) -->
+  <!-- 이 중에서 자주 쓰는 속성: translate, rotate, scale 정도 -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .transform li {
+      margin: 20px;
+      width: 150px;
+      height: 150px;
+      border: 2px solid tomato;
+      transition: 1s;
+    }
+
+    .transform li:nth-child(1):hover {
+      transform: rotate(45deg);
+    }
+
+    .transform li:nth-child(2):hover {
+      transform: rotateX(45deg);
+    }
+
+    .transform li:nth-child(3):hover {
+      transform: rotateY(45deg);
+    }
+
+    .transform li:nth-child(4):hover {
+      transform: scale(1.5);
+    }
+
+    .transform li:nth-child(5):hover {
+      transform: scaleX(1.5);
+    }
+
+    .transform li:nth-child(6):hover {
+      transform: scaleY(1.5);
+    }
+
+    .transform li:nth-child(7):hover {
+      transform: skew(25deg);
+    }
+
+    .transform li:nth-child(8):hover {
+      transform: translate(20px, 20px);
+    }
+
+    .transform li:nth-child(9):hover {
+      transform: translateX(50px);
+    }
+
+    .transform li:nth-child(10):hover {
+      transform: translateY(50px);
+    }
+
+    .transform li:nth-child(11):hover {
+      transform: rotate(180deg) scale(1.2);
+    }
+
+    .transform li:nth-child(12) {
+      transform-origin: right top;
+    }
+
+    .transform li:nth-child(12):hover {
+      transform: rotate(-45deg);
+      /* transform-origin: right top; I think this is duplicated */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- position -->
+  <style>
+    .position {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      /* position의 기준점은 왼쪽 꼭지점이기 때문에 transform 처리가 필요함 */
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      background-color: salmon;
+    }
+  </style>
+  <div class="position"></div>
+
+  <!-- transform -->
+  <ul class="transform">
+    <li>rotate</li>
+    <li>rotateX</li>
+    <li>rotateY</li>
+    <li>scale</li>
+    <li>scaleX</li>
+    <li>scaleY</li>
+    <li>skew</li>
+    <li>translate</li>
+    <li>translateX</li>
+    <li>translateY</li>
+    <li>multi</li>
+    <li>transform-origin</li>
+  </ul>
+</body>
+
+</html>

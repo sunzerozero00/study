@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position</title>
+</head>
+
+<body>
+  <style>
+    /* 모든 position 요소에는 z-index가 설정되어 있다. (static은 빼고!) */
+    .relative {
+      /* 기준점: 자기 자신 */
+      position: relative;
+      top: 10px;
+      left: 10px;
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+    }
+  </style>
+  text-relative-top
+  <div class="relative">relative</div>
+  text-relative-bottom
+
+  <style>
+    .absolute {
+      /* 기준점: 브라우저 기준. relative 속성을 가진 부모요소가 있다면 여기를 기준으로 함 */
+      /* 기존 다큐먼트레이어에서 독립적인 요소가 되어 주변 레이아웃에 영향을 미치지 않음 */
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 100px;
+      height: 100px;
+      border: 1px solid blue;
+    }
+  </style>
+  <div class="absolute">absolute</div>
+  text-absolute-bottom
+
+  <style>
+    .fixed {
+      /* 기준점: 브라우저 기준 */
+      /*  */
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      width: 100px;
+      height: 100px;
+      border: 1px solid orange;
+    }
+  </style>
+  <div class="fixed">fixed</div>
+  text-fixed-bottom
+
+  <style>
+    .sticky {
+      /* 기준점: 브라우저 기준 */
+      /* 브라우저 흐름에서 벗어나지 않고 유지됨 */
+      position: sticky;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      border: 1px solid green;
+    }
+
+    .sticky2 {
+      width: 100px;
+      height: 100px;
+      overflow: auto;
+      border: 2px solid firebrick;
+    }
+
+    .sticky2 div {
+      height: 200px;
+    }
+
+    .sticky2 .sticky3 {
+      position: sticky;
+      top: 0;
+      height: auto;
+      border: 2px solid skyblue;
+    }
+  </style>
+  <div class="sticky">sticky</div>
+  <div class="sticky2">
+    <div></div>
+    <div class="sticky3">sticky2</div>
+    <div></div>
+  </div>
+  text-sticky-bottom
+
+  <div style="height: 100vh"></div>
+
+  <style>
+    /* relative 속성의 부모 요소를 기준으로 absolute 요소가 정렬됨 */
+    /* z-index로 깊이 표현 가능, 유지보수 수정의 용이함 & z-index 준 요소 사이에 어떤 레이어가 끼어들어야 하는 변수 등을 대비해서 단위는 일정하게 넣어주는 것이 좋음(단위는 편한대루 5의 배수, 10의 배수, 100의 배수 ...) */
+    .position {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border: 3px solid salmon;
+    }
+
+    .position .a {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1;
+      background: seagreen;
+      padding: 10px;
+    }
+
+    .position .b {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: sandybrown;
+      padding: 10px;
+    }
+  </style>
+  <div class="position">
+    <div class="a">a</div>
+    <div class="b">b</div>
+    <div class="c">c</div>
+    <div class="d">d</div>
+  </div>
+</body>
+
+</html>

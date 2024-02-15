@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 스타일 종류</title>
+  <!-- 스타일 종류3. Linked Style -->
+  <link rel="stylesheet" href="./01_css.css">
+  <!-- 스타일 종류1. Embedded Style -->
+  <style>
+    /* 스타일 종류4. Import Style: 임포트가 많아지면 성능 부하가 생기므로 쓰지 않음. font-family 불러오는 정도로는 특수하게 사용하기도 함 */
+    @import url("./01_css2.css");
+
+    div {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 스타일 종류2. inline-style: 스크립트로 제어하는 스타일 또는 변수로 사용하는 스타일처럼 특별한 경우에 사용 -->
+  <div style="border: 1px solid blue;">박스</div>
+</body>
+
+</html>

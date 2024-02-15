@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overflow</title>
+</head>
+
+<body>
+  <style>
+    .overflow {
+      width: 200px;
+      height: 200px;
+      border: 3px solid seagreen;
+      /* overflow: visible; 기본값 */
+      overflow: auto;
+      /* overflow: hidden; */
+    }
+  </style>
+  <!-- overflow 접근성 이슈
+    - 키보드 제어가 가능하게 하기 위해 tabindex 속성 사용
+    - tabindex의 값은 0 또는 -1 만 사용한당.
+  -->
+  <div class="overflow" tabindex="0">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam totam illum ullam similique ab distinctio dolor
+    omnis ad temporibus, nam, obcaecati laboriosam eligendi. Delectus placeat itaque, distinctio quam temporibus quod?
+    Maxime nam labore totam cupiditate, cumque sunt vitae ut tenetur aliquam corrupti quaerat neque quia natus iste
+    aspernatur odio perferendis animi veritatis, enim impedit debitis commodi ipsum nobis laudantium! Eum consectetur
+    praesentium ipsa commodi repudiandae sit odit sed blanditiis. Illo at obcaecati nulla dolorum soluta perferendis!
+    Quia modi aliquam quo pariatur minus dignissimos blanditiis excepturi eligendi, laudantium eius nulla, cum earum
+    voluptatibus, consectetur exercitationem asperiores minima voluptas fuga impedit. Quaerat.
+  </div>
+</body>
+
+</html>

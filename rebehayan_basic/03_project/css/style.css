@@ -1,0 +1,783 @@
+@charset "utf-8";
+
+:root {
+  --gray33: #333;
+  --gray66: #666;
+  --gray99: #999;
+  --graycc: #ccc;
+  --graye1: #e1e1e1;
+  --grayf3: #f3f3f3;
+  --grayf2: #f2f2f2;
+  --grayfa: #fafafa;
+  --white: #fff;
+  --black: #000;
+  --red: #fc817c;
+  --blue: #488ad8;
+  --orange: #f08a40;
+}
+/********* 레이아웃 *********/
+.contents {
+  /* margin: auto; */
+  margin-top: 80px;
+}
+/********* 헤더 *********/
+.header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.header_inner {
+  /* display: flex; 왱..나는 flex가 더 조운뎅..*/
+  display: grid; /* logo 왼쪽 정렬, profile 오른쪽 정렬, nav 가운데 정렬을 정확히 할 수 있음 */
+  /* grid-template-columns: min-content 1fr min-content; min-content는 최소값이기 때문에 글씨의 경우 짜부러질 수 있음 > white-space로 방지 */
+  /* grid-template-columns: 185px 1fr 185px;min-content는 정확하진 않기 때문에 px 단위 사용 */
+  grid-template-columns: 185px 1fr minmax(185px, auto); /* profile 영역은 너비가 늘어날 여지가 있음. 따라서 고정 사이즈 대신 최소/최대값을 사용 */
+  align-items: center;
+  padding: 28px 0 29px;
+}
+.header h1 {
+  justify-self: start;
+}
+.logo {
+  display: block;
+  width: 156px;
+  height: 47px;
+  background: url(../images/img_logo.png) no-repeat left center;
+}
+.header nav {
+  justify-self: center;
+}
+.gnb {
+  display: flex;
+  gap: 100px;
+}
+.gnb a {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 700;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  justify-self: flex-end;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 300;
+  white-space: nowrap; /* .header_inner의 grid min-content에서 짜부러지는 것 방지 */
+}
+.profile strong {
+  font-weight: 500;
+}
+.profie__photo {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin-left: 20px;
+}
+.profie__photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile__state {
+  position: absolute;
+  top: 50%;
+  right: -6px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: 10px;
+  background: var(--red);
+  transform: translateY(-50%);
+}
+
+/********* 비쥬얼 *********/
+.visual {
+  position: relative;
+  text-align: center;
+}
+.visual img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+.visual > div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5); /* opacity: 0.5 는 alpha값 0.5로 치환*/
+}
+.visual > div::before {
+  content: "";
+  margin-bottom: 20px;
+  background-color: var(--white);
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+}
+
+.visual__title {
+  color: var(--white);
+  font-size: 40px;
+  font-weight: 700;
+}
+.visual__text {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+/********* 브레드크럼 *********/
+.breadcrumbs {
+  padding: 23px 0;
+  border-bottom: 1px solid var(--graye1);
+}
+.breadcrumbs ul {
+  display: flex;
+  gap: 47px;
+}
+.breadcrumbs a {
+  color: var(--gray99);
+  font-size: 14px;
+  font-weight: 700;
+}
+.breadcrumbs li {
+  position: relative;
+}
+.breadcrumbs li + li::before {
+  position: absolute;
+  top: 3px; /* 계산적으로는 정확한디 정렬이 안 맞으면 px로,,왜!! */
+  left: -23.5px; /* %로 줄 수는 없으려낭,, */
+  transform: translateX(-50%);
+  line-height: 1; /* 옹 이렇게 해줘도 되낭...? 근데 안 된다? > top 값 조정 */
+  content: url(../images/icon_arrow_right.svg);
+}
+.breadcrumbs li:last-child a {
+  position: relative;
+  color: var(--gray33);
+  /* text-decoration-line: underline; */
+}
+.breadcrumbs li:last-child a::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--gray33);
+  content: "";
+}
+
+/********* 제목 *********/
+.heading.regular {
+  color: var(--gray33);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -1.6px;
+}
+
+.heading.regular span {
+  display: block;
+  color: var(--gray99);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.7px;
+}
+
+.heading.small {
+  color: var(--gray33);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 100%;
+  text-align: center;
+}
+
+/********* 정렬 *********/
+.m0auto {
+  /* 이름 못생겼우...바꿀랭... */
+  width: 1224px;
+  margin: 0 auto;
+}
+/* 텍스트 정렬 */
+.txt-left {
+  text-align: left;
+}
+.txt-center {
+  text-align: center;
+}
+.txt-right {
+  text-align: right;
+}
+
+/* 컴포넌트 정렬 */
+.align {
+  display: flex;
+}
+.align.left {
+  justify-content: flex-start;
+}
+.align.right {
+  justify-content: flex-end;
+}
+.align.center {
+  justify-content: center;
+}
+.align.both {
+  justify-content: space-between;
+}
+.align.triple {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.align.triple > :nth-child(1) {
+  justify-self: start;
+}
+.align.triple > :nth-child(2) {
+  justify-self: center;
+}
+.align.triple > :nth-child(3) {
+  justify-self: right;
+}
+
+/* 수직 정렬 */
+.align.vt {
+  align-items: flex-start;
+}
+.align.vm {
+  align-items: center;
+}
+.align.vb {
+  align-items: flex-end;
+}
+
+/********* 폼 *********/
+.select,
+.textarea,
+.input {
+  width: var(--width, auto);
+  min-width: 0; /* input 기본 width 초기화 (브라우저가 작아질 때 최소값 제거) */
+  height: 48px;
+  padding: 0 20px; /* height를 정의해줬기 때문에 상하여백은 주지 않음 */
+  border: 1px solid var(--graye1);
+  background: var(--grayfa);
+  box-sizing: border-box;
+}
+.textarea::placeholder,
+.input::placeholder {
+  color: var(--graycc);
+  font-size: 16px;
+  line-height: 16px;
+}
+.textarea {
+  padding: 30px 20px;
+}
+.select {
+  font-size: 16px;
+  color: var(--graycc);
+  padding-right: 42px;
+  background: url(../images/bg_select.svg) no-repeat right 20px center var(--grayfa);
+}
+.input-file {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 200px;
+  height: 48px;
+  border: 1px solid var(--gray99);
+  color: var(--gray33);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 180%;
+  letter-spacing: -0.84px;
+  text-align: center;
+}
+.input-file::after {
+  /* Tip. text 좌측 여백과 icon 우측 여백이 모두 가능하기 때문에 가상요소 추천 */
+  content: url(../images/ico_file.svg); /* 크기 조절 불가능하기 때문에 반응형에서는 비추 */
+}
+
+.select-date-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.select-date {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.is-label {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.is-label-group {
+  /* 이거시 최선일까..! 이거슨 병인가..고민병... */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.address {
+  /* grid 왜 쓰나 생각했지만 이걸 쓰면 태그를 많이많이 절약할 수 있다~ */
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 10px;
+}
+
+.address button {
+  justify-self: start;
+  min-width: 110px;
+}
+
+.address input[type="text"] {
+  grid-column: 1 / 3;
+}
+
+.checkbox {
+  display: inline-flex; /* 체크박스가 여러 개 올 경우를 대바해서 inline 속성으로 */
+  align-items: center;
+  gap: 10px;
+  line-height: 1;
+}
+:checked + .checkbox::before {
+  content: url(../images/ico-checkbox-on.svg);
+}
+.checkbox::before {
+  content: url(../images/ico-checkbox-off.svg);
+  height: 24px;
+  color: var(--gray66);
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.28px;
+}
+input:focus + .checkbox {
+  outline: 2px dashed var(--black);
+  outline-offset: 5px;
+}
+
+/********* 버튼 *********/
+/* [Tip] 유연한 버튼을 만드는 것이 중요함 */
+/* [Tip] 약간의 크기 차이가 나는 버튼이 많으면 디자이너와 협의하는 방법도 있슴 */
+.btn-white {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--width, auto);
+  min-width: 200px; /* 버튼에는 width를 정의하는 대신 min-width를 정의하는 게 좋다 -- 걍 없는게 난거 같운뎅?*/
+  height: 48px;
+  padding: 0 10px; /* 디자이너와 협의 > 가장 여백이 적은 버튼에서 여백 확인 > 임의의 값 */
+  border: 1px solid var(--gray99);
+  background: var(--white);
+  color: var(--gray33);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 180%;
+  letter-spacing: -0.84px;
+  box-sizing: border-box;
+}
+.btn-white-radius {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  height: 50px;
+  padding: 0 25px;
+  border: 1px solid var(--gray99);
+  border-radius: 50px;
+  background: var(--white);
+  color: var(--gray33);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 180%;
+  letter-spacing: -0.84px;
+  box-sizing: border-box;
+}
+.btn-red-radius {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  height: 50px;
+  padding: 0 25px;
+  border: 1px solid var(--red);
+  border-radius: 50px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 180%;
+  letter-spacing: -0.84px;
+  box-sizing: border-box;
+}
+.btn-fav-radius {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  height: 50px;
+  padding: 0 25px;
+  border: 1px solid var(--gray66);
+  border-radius: 50px;
+  background: var(--white);
+  color: var(--gray33);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.84px;
+  box-sizing: border-box;
+}
+.btn-fav-radius::after {
+  content: url(../images/ico_fav.svg);
+}
+.btn-confirm {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 110px;
+  height: 45px;
+  padding: 0 10px;
+  border: 1px solid var(--gray99);
+  background: var(--white);
+  color: var(--gray33);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 180%;
+  letter-spacing: -0.84px;
+  box-sizing: border-box;
+}
+
+/********* 표 *********/
+table .link {
+  display: inline-block;
+  max-width: 100%;
+}
+.table-type1 {
+  border-top: 2px solid var(--gray66);
+}
+
+.table-type1 tr {
+  border-bottom: 1px solid var(--graye1);
+}
+
+.table-type1 th {
+  padding: 20px; /* 테이블 좌우 여백은 좌측 여백 기준으로, 상하여백은 가장 높은 요소의 여백을 기준으로 */
+  color: var(--black);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 14px;
+  text-align: left;
+}
+
+.table-type1 td {
+  padding: 20px;
+  color: var(--gray66);
+  font-size: 16px;
+  line-height: 16px;
+}
+
+/* 리스트 테이블 */
+.table-list-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.table-list-top .count {
+  color: var(--gray66);
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: -0.7px;
+}
+
+.table-list-top .count .num {
+  color: var(--red);
+  font-weight: 700;
+}
+
+.search-box {
+  display: inline-flex; /* 어쩌구를 위해 inline-flex로 조야하낭 */
+  gap: 10px;
+}
+
+.search-box .search {
+  width: 270px;
+  height: 44px;
+  padding: 14px 20px;
+  border: 1px solid var(--graye1);
+  background-color: var(--grayfa);
+  box-sizing: border-box;
+}
+.search-box .btn-search {
+  width: 120px;
+  height: 44px;
+  padding: 14px 0;
+  border: 1px solid var(--gray99);
+  background: var(--white);
+  color: var(--gray33);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.28px;
+  box-sizing: border-box;
+}
+
+.table-list {
+  margin-top: 30px;
+  border-top: 2px solid var(--gray33);
+  text-align: center; /* td 내부에 정렬이 들어갈 경우에 클래스 우선순위를 위해서 여기에 씀(내가 생각한 방법은 text-align 사용하지 않구 html에 클래스 추가하는 방법~) */
+}
+.table-list thead {
+  border-bottom: 1px solid var(--gray99);
+}
+.table-list thead th {
+  height: 60px;
+  padding: 19px 10px;
+  color: var(--gray33);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.28px;
+  box-sizing: border-box;
+}
+.table-list tbody tr {
+  border-bottom: 1px solid var(--grayf3);
+}
+.table-list tbody tr:hover {
+  background-color: var(--grayfa);
+}
+.table-list tbody tr:hover td {
+  color: var(--gray33); /* 다른데에 스타일을 주면 이걸 간소화할 수 있을까? 그게 더 조을까? */
+}
+.table-list tbody td {
+  height: 70px;
+  padding: 24px 30px;
+  color: var(--gray66);
+  font-size: 14px;
+  letter-spacing: -0.28px;
+  box-sizing: border-box;
+}
+.table-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 30px;
+}
+.table-nav .nav-list {
+  display: flex;
+  gap: 8px;
+}
+.table-nav .nav-list a {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: var(--gray99);
+  font-size: 14px;
+  letter-spacing: -0.28px;
+  line-height: 32px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.table-nav .nav-list a.active {
+  background-color: var(--red);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.32px;
+}
+.table-nav .btn-prev {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: url(../images//ico-prev.svg);
+}
+.table-nav .btn-next {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: url(../images//ico-next.svg);
+}
+/* 여백 */
+/* 숫자단위로 클래스명을 만드는 것이 반응형에서는 매우 좋지 않음.  */
+.mt30 {
+  margin-top: 30px;
+}
+.mt62 {
+  margin-top: 62px;
+}
+/* 
+요따구 같은 상황...
+@media (min-width: 800px) {
+  .mt62 {
+    margin-top: 20px;
+  }
+}
+*/
+
+/* 갤러리형 리스트 */
+/* 케이스 추가 */
+.lounge-list.col2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.lounge-list.col3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.lounge-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px 24px;
+}
+.lounge-list a {
+  /* [Tip] 요지는 상단 여백을 각 요소에 주기보다는 gap으로 주고 관리하는 것이 재활용 측면에서 좋다 */
+  /* 난..flex가 더 좋아... */
+  /* display: flex;
+  flex-direction: column; */
+  display: grid;
+  gap: 6px;
+}
+.lounge-list a:hover .lounge-list__thumb img {
+  transform: scale(1.5);
+}
+.lounge-list__thumb {
+  overflow: hidden;
+}
+.lounge-list__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지 비율 */
+  aspect-ratio: 4 / 3; /* 너무 좋은데 쓰기 무서워,,, */
+  transition: 0.5s;
+}
+.lounge-list__badges {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  /* transform: translateY(-50%); */
+  margin-top: -18px; /* 더 수학적으로 정확하고 싶다면 이렇게! */
+}
+.lounge-list__title {
+  margin-top: 15px;
+  color: var(--gray33);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.48px;
+}
+
+.lounge-list__date {
+  border-top: 1px solid var(--graye1);
+  color: var(--gray33);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -0.42px;
+}
+/* 뱃지 */
+.badge-orange {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+  padding: 0 15.5px; /* 15.5px 이거 어딛서나왔누..? */
+  height: 36px;
+  border-radius: 36px; /* 요건 height와 같게 줌 */
+  background-color: var(--orange);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  box-sizing: border-box;
+}
+.badge-coin {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+  height: 36px;
+  padding: 8px 12px 8px 35px;
+  border-radius: 36px;
+  border: 1px solid var(--graye1);
+  background: var(--white);
+  color: var(--gray66);
+  font-size: 14px;
+  letter-spacing: -0.7px;
+  box-sizing: border-box;
+}
+.badge-coin::before {
+  position: absolute;
+  left: 12px;
+  width: 19px;
+  height: 18px;
+  background: url(../images/ico_coin.svg) no-repeat;
+  content: "";
+}
+
+/* 텍스트 리스트 */
+.txt-list-type1 {
+  color: var(--gray66);
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.42px;
+}
+
+.txt-list-type1__title {
+  display: inline-flex;
+  align-items: center;
+}
+.txt-list-type1__title i {
+  width: 20px;
+}
+/* 기타 컴포넌트 */
+.tag-list {
+  color: var(--gray99);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.42px;
+}
+
+/********* 푸터 *********/
+.footer {
+  margin-top: 200px;
+}
+
+/********* 팝업 *********/
+.dialog {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+/* 유틸리티 */
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

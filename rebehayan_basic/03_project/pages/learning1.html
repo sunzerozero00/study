@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <title>러닝라운지 보기</title>
+</head>
+
+<body>
+  <div class="header">헤더</div>
+  <main>
+    <div class="visual"></div>
+    <nav class="breadcrumbs"></nav>
+    <div class="contents">
+      <div class="m0auto">
+        <!-- BEM 대박 연습 -->
+        <!-- 리스트 형태에서 제목 같은건 리스트 안에서만 재활용 되지만 목록은 다른 컴포넌트 내에서도 재활용될 수 있음! (가치가 훨씬 높음) -->
+        <!-- 가치에 따라 얼마나 클래스에 종속성을 포함시킬지, 독립적으로 쓸지 생각해보기 -->
+        <ul class="lounge-list">
+          <li>
+            <a href="">
+              <div class="lounge-list__thumb">
+                <img src="../images/@thumb.png" alt="">
+              </div>
+              <div class="lounge-list__badges">
+                <span class="badge-orange">경영</span>
+                <span class="badge-coin">230</span>
+              </div>
+              <div class="lounge-list__title">
+                상급 매니저 MI 워크숍 (과정명)
+              </div>
+              <div class="tag-list"></div>
+              <ul class="txt-list-type1">
+                <li>
+                  <span class="txt-list-type1__title">형<i role="none"></i> 태 : </span>온라인/오프라인/온+오프라인
+                </li>
+                <li>
+                  <span class="txt-list-type1__title">일<i role="none"></i> 정 : </span>2021.04.20 ~ 2021.04.25
+                </li>
+              </ul>
+              <div class="lounge-list__date">
+                신청기간 : 2021.04.10 ~ 2021.04.15
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <div class="footer">푸터</div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boxmodel</title>
+</head>
+
+<body>
+  <div class="box padding">박스</div>
+  <div class="box margin">박스</div>
+  <div class="box boxmodel">박스</div>
+  <div class="box radius">박스</div>
+  <div class="box shadow">박스</div>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+    }
+
+    .padding {
+      /* padding: 10px; */
+      /* padding: 10px 20px; */
+      /* padding: 10px 20px 30px; */
+      padding: 10px 20px 30px 40px;
+
+      /* padding: 배경 또는 선이 존재할 때(?) (요소 안쪽 여백) */
+    }
+
+    .margin {
+      /* margin: 10px; */
+      /* margin: 10px 20px; */
+      /* margin: 10px 20px 30px; */
+      margin: 10px 20px 30px 40px;
+
+      /* margin: 컴퍼넌트와 컴퍼넌트 사이의 간격 또는 배경 또는 선이 존재할 때?? / 여백은 한쪽 방향으로 일관적으로 (요소 바깥쪽 여백) */
+      /* (여튼 여백은 기본적으로 왼쪽 위였나,,,) */
+      /* (마진 우위,,,? 중첩,,,) */
+    }
+
+    .boxmodel {
+      /* padding: 10px; */
+      /* border: 10px solid red; */
+      /* padding, border 때문에 늘어나는 것 방지 */
+      box-sizing: border-box;
+      /* 기본적으로 border-box인 요소: input, button 등 */
+    }
+
+    .radius {
+      border-radius: 10px;
+      border-right: 1px solid red;
+      border-bottom: 1px dotted blue;
+      border-left: 1px dashed orange;
+      border-top: 1px solid tomato;
+    }
+
+    .shadow {
+      box-shadow: inset 10px 10px 30px #005891;
+    }
+  </style>
+</body>
+
+</html>

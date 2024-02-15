@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid</title>
+  <!-- (먼 주소폼에 grid를...? 먼가 복잡하넹...근데 갤러리 레이아웃 같은거 그리드로 짜니까 머리 아프긴 한데 재밌넹...) -->
+</head>
+
+<body>
+  <style>
+    /* 개념 & 리스트 */
+    .grid {
+      display: grid;
+      /* grid-template-columns: 1fr 1fr 1fr; */
+      /* grid-template-columns: repeat(횟수, 크기); */
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px 21px;
+      padding: 10px;
+      border: 1px solid red;
+    }
+
+    .grid div {
+      border: 1px solid blue;
+      /* width: 100px; */
+      height: 50px;
+    }
+
+    /* 폼 */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 79px;
+      gap: 0;
+    }
+
+    .grid .item3 {
+      grid-column: 1 / 3;
+    }
+
+    .grid .item4 {
+      grid-column: 1 / 3;
+    }
+  </style>
+  <div class="grid">
+    <div class="item1"></div>
+    <div class="item2"></div>
+    <div class="item3"></div>
+    <div class="item4"></div>
+  </div>
+
+  <!-- Responsive Design Layout -->
+  <style>
+    .grid2 {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+    }
+
+    .grid2 div {
+      padding: 10px;
+      border: 1px solid tomato;
+    }
+
+    .grid2 .item1 {
+      grid-row: 1 / 3;
+    }
+  </style>
+  <div class="grid2">
+    <div class="item1">이미지</div>
+    <div class="item2">로고</div>
+    <div class="item3">텍스트</div>
+  </div>
+
+  <br><br><br>
+  <style>
+    .grid3 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .grid3 div {
+      padding: 10px;
+      border: 1px solid violet;
+    }
+
+    .grid3 .item1 {
+      grid-row: 1 / 3;
+    }
+
+    .grid3 .item2 {
+      grid-row: 1 / 3;
+    }
+
+    .grid3 .item3 {
+      grid-column: 3 / 5;
+    }
+
+    .grid3 .item {}
+  </style>
+  <div class="grid3">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+  </div>
+</body>
+
+</html>

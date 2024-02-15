@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수</title>
+</head>
+
+<body>
+  <!-- CSS 변수는 IE외의 모든 브라우저 지원 -->
+  <!-- 변수 사용예: 테마 적용(dark) 1. 변수 재정의 2. 테마 클래스 안에 변수 정의
+        >> 진행 전 디자이너와 협의 필수 -->
+  <style>
+    :root {
+      /* primary, background 와 같이 목적에 맞게 이름을 지으면 좋지만 디자인도 받쳐주어야 하고 현실적으로 어려운 경우도 있기 때문에 색상+색상코드로 이름 짓는게 명료할 수 있다. (그럴수도...대기업만 아무래도...진짜로 primary warning 이런 것만 쓰구 gray-100 요런식으로 썼던 것 같다) */
+      /* 색상을 변수로 빼면 전체적인 색깔표를 체크할 수 있음. 눈도 편하고, 손도 편하고, 비슷한 색상 있으면 디자이너랑 협의도 좀 하고!! >_< */
+      /* (어떻게 썼었나 좀 베껴와야게따 ㅎ_ㅎ gray-100 / black-rgba? / shadow /primary (정의는 되어 있지만 서비스에서 따로 지정하기도 했음)) */
+
+      /* --변수명: 값; */
+      --redbd: #bd0000;
+      --graye4: #e4e4e4;
+      --gray22: #222;
+      --grayfa: #fafafa;
+    }
+
+    div {
+      /* 다크모드 예시 1. 변수 재정의
+      --black: #fafafa */
+
+      color: var(--red);
+      border: 1px solid var(--e4e4e4);
+      background: var(--fafafa);
+    }
+
+    /* 다크모드 예시 2. 클래스 안에서 변수 재정의
+    .dark {
+      --black: #fafafa;
+    } */
+  </style>
+  <div>텍스트</div>
+</body>
+
+</html>

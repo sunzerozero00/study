@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background</title>
+  <!-- cover, contain 개념 추가 정리 -->
+</head>
+
+<body>
+  <style>
+    /* position은 배경 이미지가 붙어있는 곳을 기준으로 계산 ex) 돼지 아이콘은 왼쪽 위 기준 */
+    .background {
+      /* background: 경로 | repeat | position | size | color; */
+      background: url("./images/img_background.png") no-repeat center center palevioletred;
+      /* background-size: width height; sprite image 사용할 때 마니 썼었다.. */
+      background-size: 100px 20px;
+      width: 1000px;
+      height: 1000px;
+      border: 2px solid tomato;
+    }
+  </style>
+  <div class="background">배경이미지 삽입</div>
+
+  <!-- background image 사용 예시 -->
+  <div class="btn-prev" aria-label="이전페이지"></div>
+  <button class="btn-newwindow">해지환급금 예시표 보기 <span class="hidden">새창</span></button>
+  <button class="btn-info" aria-label="도움말"></button>
+
+  <br><br><br>
+  <style>
+    .gradient {
+      width: 200px;
+      height: 200px;
+      border: 3px solid salmon;
+      /* background: linear-gradient(방향, 색상값, 색상값); */
+      background: linear-gradient(to bottom, tomato, green);
+    }
+  </style>
+  <div class="gradient"></div>
+</body>
+
+</html>

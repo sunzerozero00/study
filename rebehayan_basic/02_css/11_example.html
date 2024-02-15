@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI제작</title>
+  <link rel="stylesheet" href="css/11_example.css">
+</head>
+
+<body>
+  <h2>표8</h2>
+  <table class="calendar">
+    <caption>
+      달력
+    </caption>
+    <colgroup>
+      <col style="width: 14.2%">
+      <col style="width: 14.2%">
+      <col style="width: 14.2%">
+      <col style="width: 14.2%">
+      <col style="width: 14.2%">
+      <col style="width: 14.2%">
+      <col style="width: 14.2%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>SUN</th>
+        <th>MON</th>
+        <th>TUE</th>
+        <th>WED</th>
+        <th>THU</th>
+        <th>FRI</th>
+        <th>SAT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><b>1</b></td>
+        <td><b>2</b></td>
+      </tr>
+      <tr>
+        <td><b>3</b></td>
+        <td><b>4</b></td>
+        <td><b>5</b></td>
+        <td><b>6</b></td>
+        <td><b>7</b></td>
+        <td><b>8</b></td>
+        <td><b>9</b></td>
+      </tr>
+      <tr>
+        <td><b>10</b></td>
+        <td><b>11</b></td>
+        <td><b>12</b></td>
+        <td><b>13</b></td>
+        <td><b>14</b></td>
+        <td><b>15</b></td>
+        <td><b>16</b></td>
+      </tr>
+      <tr>
+        <td><b>17</b></td>
+        <td><b>18</b></td>
+        <td><b>19</b></td>
+        <td><b>20</b></td>
+        <td class="today"><b>21</b></td>
+        <td class="reservation">
+          <b>22</b>
+          <b class="text">예약가능</b>
+        </td>
+        <td><b>23</b></td>
+      </tr>
+      <tr>
+        <td><b>24</b></td>
+        <td class="reservation">
+          <b>25</b>
+          <b class="text">예약가능</b>
+        </td>
+        <td class="reservation">
+          <b>26</b>
+          <b class="text">예약가능</b>
+        </td>
+        <td class="reservation">
+          <b>27</b>
+          <b class="text">예약가능</b>
+        </td>
+        <td class="close">
+          <b>28</b><br>
+          <b class="text">예약마감</b>
+        </td>
+        <td class="close">
+          <b>29</b><br>
+          <b class="text">예약마감</b>
+        </td>
+        <td><b>30</b></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+  <h2>표10</h2>
+  <table class="table-type10">
+    <caption>
+      핵연료 보관 정보
+    </caption>
+    <colgroup>
+      <col style="width: 192px;">
+      <col style="width: 301px;">
+      <col style="width: 324px;">
+      <col style="width: 184px;">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>종류</th>
+        <th>보관장소</th>
+        <th>보관량</th>
+        <th>전분기 대비 증감량</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th rowspan="2">경수로 사용후핵연료</th>
+        <td>
+          <span class="text-wrap">
+            조사후연료시험시설
+            <a href class="link">시설안내</a>
+          </span>
+        </td>
+        <td>3,319.1 kgU(1,693봉, 봉 길이 4m)</td>
+        <td class="txt-center">-</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="text-wrap">
+            조사재시험시설
+            <a href class="link">시설안내</a>
+          </span>
+        </td>
+        <td>26.4 kgU(6봉, 봉 길이 4m)</td>
+        <td class="txt-center">-</td>
+      </tr>
+      <tr>
+        <th>하나로 사용후핵연료</th>
+        <td>
+          <span class="text-wrap">
+            하나로 수조
+            <a href class="link">시설안내</a>
+          </span>
+        </td>
+        <td>870.7 kgU(510다발, 다발 깅이 0.96m)</td>
+        <td class="txt-center">6.3kgU(4다발)</td>
+      </tr>
+      <tr>
+        <th rowspan="3">조사 핵연료 시편</th>
+        <td>
+          <span class="text-wrap">
+            하나로 수조
+            <a href class="link">시설안내</a>
+          </span>
+        </td>
+        <td>6.1 kgU</td>
+        <td class="txt-center">-</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="text-wrap">
+            조사후연료시험시설
+            <a href class="link">시설안내</a>
+          </span>
+        </td>
+        <td>0.7 kgU</td>
+        <td class="txt-center">-</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="text-wrap">
+            조사재시험시설
+            <a href class="link">시설안내</a>
+          </span>
+        </td>
+        <td>1.0 kgU</td>
+        <td class="txt-center">-</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+  <h2>리스트1</h2>
+  <nav>
+    <ul class="faq-tabmenu">
+      <li class="faq-tablist">
+        <button class="faq-tablink">전체</button>
+      </li>
+      <li class="faq-tablist active">
+        <button class="faq-tablink">회원정보관리</button>
+      </li>
+      <li class="faq-tablist">
+        <button class="faq-tablink">상품</button>
+      </li>
+      <li class="faq-tablist">
+        <button class="faq-tablink">주문결제</button>
+      </li>
+      <li class="faq-tablist">
+        <button class="faq-tablink">시공/AS</button>
+      </li>
+      <li class="faq-tablist">
+        <button class="faq-tablink">포인트/상품권</button>
+      </li>
+      <li class="faq-tablist">
+        <button class="faq-tablink">고객후기</button>
+      </li>
+      <li class="faq-tablist">
+        <button class="faq-tablink">매장</button>
+      </li>
+      <li class="faq-tablist">
+        <button class="faq-tablink">상담예약</button>
+      </li>
+      <li class="faq-tablist">
+        <button class="faq-tablink">오류해결</button>
+      </li>
+    </ul>
+  </nav>
+  <div class="tabcontent">
+    탭내용2
+  </div>
+
+  <br><br><br>
+  <h2>리스트2</h2>
+  <nav>
+    <ul class="product-tabmenu">
+      <li class="product-tabitem active">
+        <button class="product-tablink">저축</button>
+      </li>
+      <li class="product-tabitem">
+        <button class="product-tablink">연금</button>
+      </li>
+      <li class="product-tabitem">
+        <button class="product-tablink">자녀</button>
+      </li>
+      <li class="product-tabitem">
+        <button class="product-tablink">보장</button>
+      </li>
+    </ul>
+  </nav>
+  <div class="tabcontent">탭내용1</div>
+
+  <br><br><br>
+  <h2>리스트4</h2>
+  <strong class="recommend-title">이런분들에게 추천합니다</strong>
+  <ol class="recommend-list">
+    <li class="recommend-item">
+      <span class="num">01</span><b>직업상담직 공무원 합격</b> 목표인 분
+    </li>
+    <li class="recommend-item">
+      <span class="num">02</span><b>고용지원관련 업무 취업</b> 목표인 분
+    </li>
+    <li class="recommend-item">
+      <span class="num">03</span><b>학점은행제 20학점 인정</b> 받고 싶은 분
+    </li>
+    <li class="recommend-item">
+      <span class="num">04</span><b>직업상담사 2급 자격증을</b> 준비하시는 모든 분들
+    </li>
+  </ol>
+
+  <br><br><br>
+  <h2>리스트7</h2>
+  <ul class="subsidiary-list">
+    <li>
+      <div class="subsidiary-list__logo">
+        <img src="./images/ico_list7_logo1.svg" alt="">
+      </div>
+      <div class="subsidiary-list__title">
+        <span class="a11y-hidden">계열사명</span>
+        <b>리베마트</b>
+        온라인 몰
+      </div>
+      <ul class="info-list">
+        <li><span class="info-list__title">기간</span> 2019.3.1(금)-3.31(일)</li>
+        <li><span class="info-list__title">적립일</span> 2019.4.19(금)</li>
+        <li><span class="info-list__title">대상</span> R.pay 3만원 이상 첫 결제</li>
+        <li><span class="info-list__title">혜택</span> <span class="txt-blue">3천P적립</span></li>
+      </ul>
+    </li>
+    <li>
+      <div class="subsidiary-list__logo"><img src="./images/ico_list7_logo2.svg" alt=""></div>
+      <div class="subsidiary-list__title">
+        <span class="a11y-hidden">계열사명</span>
+        <b>리베마트</b>
+
+        온라인 몰/오프라인 매장
+      </div>
+      <ul class="info-list">
+        <li><span class="info-list__title">기간</span> 2019.3.1(금)-3.31(일)</li>
+        <li><span class="info-list__title">적립일</span> 2019.4.19(금)</li>
+        <li><span class="info-list__title">대상</span> R.pay 3만원 이상 첫 결제</li>
+        <li><span class="info-list__title">혜택</span> <span class="txt-blue">3천P적립</span></li>
+      </ul>
+    </li>
+    <li>
+      <div class="subsidiary-list__logo"><img src="./images/ico_list7_logo3.svg" alt=""></div>
+      <div class="subsidiary-list__title">
+        <span class="a11y-hidden">계열사명</span>
+        <b>리베닷컴</b>
+        온라인 몰
+      </div>
+      <ul class="info-list">
+        <li><span class="info-list__title">기간</span> 2019.3.1(금)-3.31(일)</li>
+        <li><span class="info-list__title">적립일</span> 2019.4.19(금)</li>
+        <li><span class="info-list__title">대상</span> R.pay 3만원 이상 첫 결제</li>
+        <li><span class="info-list__title">혜택</span> <span class="txt-blue">3천P적립</span></li>
+      </ul>
+    </li>
+    <li>
+      <div class="subsidiary-list__logo"><img src="./images/ico_list7_logo2.svg" alt=""></div>
+      <div class="subsidiary-list__title">
+        <span class="a11y-hidden">계열사명</span>
+        <b>리베홈쇼핑</b>
+        온라인 몰
+      </div>
+      <ul class="info-list">
+        <li><span class="info-list__title">기간</span> 2019.3.1(금)-3.31(일)</li>
+        <li><span class="info-list__title">적립일</span> 2019.4.19(금)</li>
+        <li><span class="info-list__title">대상</span> R.pay 3만원 이상 첫 결제</li>
+        <li><span class="info-list__title">혜택</span> <span class="txt-blue">3천P적립</span></li>
+      </ul>
+    </li>
+    <li>
+      <div class="subsidiary-list__logo"><img src="./images/ico_list7_logo4.svg" alt=""></div>
+      <div class="subsidiary-list__title">
+        <span class="a11y-hidden">계열사명</span>
+        <b>엘리베</b>
+        온라인 몰
+      </div>
+      <ul class="info-list">
+        <li><span class="info-list__title">기간</span> 2019.3.1(금)-3.31(일)</li>
+        <li><span class="info-list__title">적립일</span> 2019.4.19(금)</li>
+        <li><span class="info-list__title">대상</span> R.pay 3만원 이상 첫 결제</li>
+        <li><span class="info-list__title">혜택</span> <span class="txt-blue">3천P적립</span></li>
+      </ul>
+    </li>
+    <li>
+      <div class="subsidiary-list__logo"><img src="./images/ico_list7_logo1.svg" alt=""></div>
+      <div class="subsidiary-list__title">
+        <span class="a11y-hidden">계열사명</span>
+        <b>리베인터넷면세점</b>
+        온라인 몰
+      </div>
+      <ul class="info-list">
+        <li><span class="info-list__title">기간</span> 2019.3.1(금)-3.31(일)</li>
+        <li><span class="info-list__title">적립일</span> 2019.4.19(금)</li>
+        <li><span class="info-list__title">대상</span> R.pay 3만원 이상 첫 결제</li>
+        <li><span class="info-list__title">혜택</span> <span class="txt-blue">3천P적립</span></li>
+      </ul>
+    </li>
+  </ul>
+
+  <br><br><br>
+  <h2>리스트8</h2>
+  <h3 class="gallery-title">Offer</h3>
+  <div class="gallery-subtitle">Find out more</div>
+  <ul class="gallery-list">
+    <li>
+      <a href="" class="gallery-list__link ">
+        <div class="gallery-list__thumb">
+          <img src="./images/img_list8_1.jpg" alt="">
+        </div>
+        <div class="gallery-list__date">2019.03.01 - 2019.04.30</div>
+        <strong class="gallery-list__title">Blueberry Promotion</strong>
+        <p>봄 기운을 가득 담은 블루베리 프로모션을 선보입니다. 상큼한 블루베리 주스와 무스케이크, 슈, 타르트로 재탄생한 다양한 블루베리 디저트를 만나보세요.</p>
+        <div>View more</div>
+      </a>
+    </li>
+    <li>
+      <a href="" class="gallery-list__link ">
+        <div class="gallery-list__thumb">
+          <img src="./images/img_list8_2.jpg" alt="">
+        </div>
+        <div class="gallery-list__date">2019.03.01 - 2019.04.30</div>
+        class="gallery-list__title" <strong>클럽 라한 회원특가 프로모션</strong>
+        <p>리베호텔(울산, 경주, 목포)에서 ‘클럽 리베’ 회원만을 위한 할인 프로모션을 선보입니다.</p>
+        <div>View more</div>
+      </a>
+    </li>
+    <li>
+      <a href="" class="gallery-list__link ">
+        <div class="gallery-list__thumb">
+          <img src="./images/img_list8_3.jpg" alt="">
+        </div>
+        <div class="gallery-list__date">2019.03904 - 2019.04.30</div>
+        <strong class="gallery-list__title">‘선물같은 봄’ 패키지</strong>
+        <p>Welcome Spring gift 봄을 맞이해 ‘선물같은 봄’ 패키지를 선보입니다.</p>
+        <div>View more</div>
+      </a>
+    </li>
+  </ul>
+
+  <br><br><br>
+  <h2>리스트9</h2>
+  <ul>
+    <li>
+      <a href="#">
+        <img src="./images/img_list9_1.png" alt="">
+        <strong>리베경영연구원</strong>
+        <div>Rebe Research Institute</div>
+        <b>Creative Think Leader in Steel and Beyond</b>
+        <p>
+          리베경영연구원은 미래를 선도하는 경영모델과 산업분야에 대한 연구 결과를 지속적으로 산출하고 세계 최고 수준의 연구와 컨설팅 역량을 갖춘 경영 및 철강산업 전문 연구기관입니다.
+          또한 창의적인 연구방식과 실용적인 연구 결과를 적기에 제공함으로써 최고 경영자의 의사결정을 지원하고 포스코 그룹의 지속성장과 사회 발전에 기여합니다.
+        </p>
+        <div>홈페이지 바로가기</div>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="./images/img_list9_2.png" alt="">
+        <strong>리베인재창조원</strong>
+        <div>Rebe Group University</div>
+        <b>창의와 혁신의 글로벌 NO.1 HRD 센터</b>
+        <p>
+          `15년2월, 리베인재창조원은 그룹교육기능을 통합한 종합적인 인재육성 기관으로 새롭게 출범하였습니다.
+          `69년 제철연수원부터 쌓아온 HRD 노하우를 적극 활용하여 그룹 일체감 조성 및 계층별 리더십 배양, 신뢰의 조직 문화 구축에 주력하고 있습니다.
+          리베 그룹의 미래 가치를 창조하는 인재를 육성한다는 리베인재창조원의 미 션에 따라 변화와 혁신을 지원하며 Global Top Tier 수준의 교육전문기관이 되겠습니다.
+        </p>
+        <div>홈페이지 바로가기</div>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="./images/img_list9_3.png" alt="">
+        <strong>리베공과대학교</strong>
+        <div>RebeTECH</div>
+        <b>가치창출대학 POSTECH</b>
+        <p>
+          리베공과대학교는 1986년, 대한민국 최초의연구중심대학으로 문을 열었습니다.
+          교육, 연구, 산학협동을 통해 국 가와 인류에 봉사하겠다는 건학이념 아래 30여년전 우리 대학사회의 연구 문화에 불씨를 지핀 리베공과대학교는 도전과 혁신을 거듭하며 오늘날 아시아 정상급의 대학으로
+          자리매김했습니다. 우리나라 고등교육계와 과학기술계를 전도하며 짧은 기간 최고 명문대학으로 성장한 리베공과대학교는 또 다른 30년을 준비하며 ‘가치창출대학(Value Creating
+          University)’이라는 새로운 지향점을 향해
+          나아가고 있습니다. 리베공과대학교는 ‘튼실한 학부교육’, ‘빼어난 연구’, ‘활발한 창업과 창직’에 힘쓰며 가치창출의 새로운 길을 열어 대한민국의 사회경제적 발전에 직접적으로 기여하겠습니다.
+        </p>
+        <div>홈페이지 바로가기</div>
+      </a>
+    </li>
+  </ul>
+
+  <br><br><br>
+  <h2>폼1</h2>
+
+  <br><br><br>
+  <h2>폼2</h2>
+
+  <br><br><br>
+  <h2>폼3</h2>
+
+  <br><br><br>
+  <h2>폼9</h2>
+</body>
+
+</html>
